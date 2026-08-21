@@ -1,0 +1,3 @@
+- home hero carousel
+- desctop and tablet versions
+- expanded mobile navigation (when clicking burger)
