@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Заголовок страницы — Завод Металлист</title>
+    <meta
+      name="description"
+      content="Краткое описание страницы для поисковых систем. 140–160 символов, уникальное для каждой страницы."
+    />
+    <link rel="canonical" href="" />
+    <meta property="og:title" content="Заголовок страницы — Завод Металлист" />
+    <meta property="og:description" content="Краткое описание страницы." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <link rel="stylesheet" href="../../src/styles.css" />
+    <script type="module" src="../../src/components/site-header.js"></script>
+    <script type="module" src="../../src/components/site-footer.js"></script>
+    <script type="module" src="../../src/components/contact-form.js"></script>
+  </head>
+  <body>
+    <!-- BEGIN: Header -->
+    <site-header>
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../../index.html" aria-label="Завод Металлист — на главную">
+            <img src="../../public/fittings_logo.svg" alt="Завод Металлист" height="40" width="40" />
+          </a>
+          <nav class="header-nav" aria-label="Основная навигация">
+            <a href="../../index.html#about">О компании</a>
+            <a href="../../index.html#catalog">Каталог</a>
+            <a href="../../public/pricelist.pdf">Документы</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <div class="header-actions">
+            <a class="header-icon-btn" href="tel:+74951524700" aria-label="Позвонить: +7 (495) 152-47-00">
+              <img
+                src="../../public/icons/phone.svg"
+                alt=""
+                width="22"
+                height="22"
+                style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)"
+              />
+            </a>
+            <a class="header-icon-btn" href="mailto:sales@metallist.org" aria-label="Написать: sales@metallist.org">
+              <img
+                src="../../public/icons/mail.svg"
+                alt=""
+                width="22"
+                height="22"
+                style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)"
+              />
+            </a>
+            <button
+              aria-controls="site-header-drawer"
+              aria-expanded="false"
+              aria-label="Открыть меню"
+              class="menu-btn"
+              type="button"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="mobile-overlay" data-overlay></div>
+      <div
+        aria-label="Меню"
+        aria-modal="true"
+        class="mobile-drawer"
+        data-drawer
+        id="site-header-drawer"
+        role="dialog"
+      >
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-title">Меню</span>
+          <button aria-label="Закрыть меню" class="drawer-close-btn" data-close type="button">
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+        <nav aria-label="Мобильная навигация" class="mobile-nav">
+          <a href="../../index.html#about"
+            >О компании
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="../../index.html#catalog"
+            >Каталог
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="../../public/pricelist.pdf"
+            >Документы
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="#contacts"
+            >Контакты
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+        </nav>
+        <div class="mobile-drawer-contacts">
+          <a class="contact-phone" href="tel:+74951524700">+7 (495) 152-47-00</a>
+          <p>ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:sales@metallist.org">sales@metallist.org</a></p>
+        </div>
+      </div>
+    </site-header>
+    <!-- END: Header -->
+
+    <main>
+      <!-- BEGIN: Page Content (blank slot) -->
+      <section class="content-section">
+        <h1>Заголовок страницы</h1>
+        <p>
+          Это пустой шаблон. Вставьте сюда уникальный контент страницы — он будет проиндексирован
+          поисковиками. Между шапкой и формой контактов можно добавлять сколько угодно секций.
+        </p>
+        <div class="image-wrapper">
+          <img
+            src="https://via.placeholder.com/800x400?text=Изображение+страницы"
+            alt="Описание изображения"
+          />
+        </div>
+        <p>
+          Рекомендации по SEO: один &lt;h1&gt; на страницу, иерархия h2/h3, уникальные
+          title/description, alt-тексты изображений, внутренние ссылки.
+        </p>
+      </section>
+      <!-- END: Page Content -->
+    </main>
+
+    <!-- BEGIN: Contact Form -->
+    <contact-form>
+      <section class="contact-section">
+        <div class="contact-inner">
+          <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
+          <form novalidate>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-name-2">Имя</label>
+              <input
+                class="form-input"
+                id="cf-name-2"
+                name="name"
+                placeholder="Имя*"
+                required
+                type="text"
+                autocomplete="name"
+              />
+              <span class="form-error" data-error="name" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-email-2">E-mail</label>
+              <input
+                class="form-input"
+                id="cf-email-2"
+                name="email"
+                placeholder="E-mail*"
+                required
+                type="email"
+                autocomplete="email"
+              />
+              <span class="form-error" data-error="email" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-comment-2">Комментарий</label>
+              <textarea
+                class="form-input"
+                id="cf-comment-2"
+                name="comment"
+                placeholder="Ваш комментарий*"
+                required
+                rows="4"
+              ></textarea>
+              <span class="form-error" data-error="comment" aria-live="polite"></span>
+            </div>
+            <div class="form-checkbox-group">
+              <div class="checkbox-container">
+                <input class="form-checkbox" id="terms-2" name="consent" required type="checkbox" />
+              </div>
+              <label class="form-checkbox-label" for="terms-2">
+                Отправляя запрос, я принимаю условия
+                <a href="privacy.html">Пользовательского соглашения</a> и подтверждаю обязательное согласие с
+                <a href="privacy.html">Политикой конфиденциальности</a>.
+              </label>
+            </div>
+            <span
+              class="form-error"
+              data-error="consent"
+              aria-live="polite"
+              style="display: block; margin-bottom: 0.75rem; font-size: 0.75rem; color: var(--brand-red)"
+            ></span>
+            <button class="btn-primary" type="submit">Отправить</button>
+            <p
+              data-status
+              role="status"
+              aria-live="polite"
+              style="font-size: 0.875rem; margin-top: 0.75rem; min-height: 1.25rem"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </contact-form>
+    <!-- END: Contact Form -->
+
+    <!-- BEGIN: Footer -->
+    <site-footer>
+      <footer class="footer">
+        <div class="container footer-main">
+          <div>
+            <h4 class="footer-title">Компания</h4>
+            <ul class="footer-nav">
+              <li><a href="../../index.html#about">О компании</a></li>
+              <li><a href="../../index.html#catalog">Каталог</a></li>
+              <li><a href="../../public/pricelist.pdf">Документы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Помощь</h4>
+            <ul class="footer-links">
+              <li><a href="#">Доставка и оплата</a></li>
+              <li><a href="#">Возврат</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer-contacts" id="contacts">
+            <h4 class="footer-title">Контакты</h4>
+            <a class="contact-phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <ul class="contact-list">
+              <li class="contact-list-item">
+                <svg class="contact-icon contact-icon-mt" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span>[[address]]</span>
+              </li>
+              <li class="contact-list-item">
+                <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <a href="mailto:smeta@metallist.ru">[[email@email.em]]</a>
+              </li>
+              <li class="contact-list-item">
+                <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span>ПН. — ПТ. с 8:00 до 17:00</span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2026 Завод «Металлист». Все права защищены.</p>
+            <p>© WSS «Fittings Factory»</p>
+          </div>
+        </div>
+      </footer>
+    </site-footer>
+    <!-- END: Footer -->
+  </body>
+</html>

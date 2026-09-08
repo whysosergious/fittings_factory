@@ -1,40 +1,211 @@
 <!doctype html>
-
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Завод Металлист</title>
+    <title>Мебельная фурнитура, скобяные изделия, перфорированный крепеж</title>
+    <meta
+      name="description"
+      content="Завод «Металлист» с 1937 года — производитель мебельной фурнитуры, скобяных изделий и перфорированного крепежа. 2000+ позиций, доставка по России и СНГ."
+    />
+    <link rel="canonical" href="/" />
+    <meta
+      property="og:title"
+      content="Завод Металлист — мебельная фурнитура и крепеж"
+    />
+    <meta
+      property="og:description"
+      content="Производство мебельной фурнитуры, скобяных изделий и перфорированного крепежа с 1937 года."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
     <link rel="stylesheet" href="src/styles.css" />
+    <script type="module" src="src/components/site-header.js"></script>
+    <script type="module" src="src/components/site-footer.js"></script>
+    <script type="module" src="src/components/contact-form.js"></script>
   </head>
   <body>
     <!-- BEGIN: Main Navigation -->
-    <header class="header">
-      <!-- Logo -->
-      <a class="logo" href="#"
-        ><img
-          src="public/fittings_logo.svg"
-          alt="fittings_logo"
-          height="40"
-          width="40"
-      /></a>
-      <!-- Burger Menu -->
-      <button aria-label="Открыть меню" class="menu-btn">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewbox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </button>
-    </header>
+    <site-header>
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="/" aria-label="Завод Металлист — на главную">
+            <img
+              src="public/fittings_logo.svg"
+              alt="Завод Металлист"
+              height="40"
+              width="40"
+            />
+          </a>
+
+          <nav class="header-nav" aria-label="Основная навигация">
+            <a href="#about">О компании</a>
+            <a href="#catalog">Каталог</a>
+            <a href="public/pricelist.pdf">Документы</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+
+          <div class="header-actions">
+            <a
+              class="header-icon-btn"
+              href="tel:+74951524700"
+              aria-label="Позвонить: +7 (495) 152-47-00"
+            >
+              <img
+                src="public/icons/phone.svg"
+                alt=""
+                width="22"
+                height="22"
+                style="
+                  width: 1.45rem;
+                  height: 1.45rem;
+                  filter: brightness(0) invert(1);
+                "
+              />
+            </a>
+            <a
+              class="header-icon-btn"
+              href="mailto:sales@metallist.org"
+              aria-label="Написать: sales@metallist.org"
+            >
+              <img
+                src="public/icons/mail.svg"
+                alt=""
+                width="22"
+                height="22"
+                style="
+                  width: 1.45rem;
+                  height: 1.45rem;
+                  filter: brightness(0) invert(1);
+                "
+              />
+            </a>
+            <button
+              aria-controls="site-header-drawer"
+              aria-expanded="false"
+              aria-label="Открыть меню"
+              class="menu-btn"
+              type="button"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-overlay" data-overlay></div>
+      <div
+        aria-label="Меню"
+        aria-modal="true"
+        class="mobile-drawer"
+        data-drawer
+        id="site-header-drawer"
+        role="dialog"
+      >
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-title">Меню</span>
+          <button
+            aria-label="Закрыть меню"
+            class="drawer-close-btn"
+            data-close
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+        <nav aria-label="Мобильная навигация" class="mobile-nav">
+          <a href="#about"
+            >О компании
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="#catalog"
+            >Каталог
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="public/pricelist.pdf"
+            >Документы
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a href="#contacts"
+            >Контакты
+            <svg
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
+        </nav>
+        <div class="mobile-drawer-contacts">
+          <a class="contact-phone" href="tel:+74951524700"
+            >+7 (495) 152-47-00</a
+          >
+          <p>
+            ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:sales@metallist.org"
+              >sales@metallist.org</a
+            >
+          </p>
+        </div>
+      </div>
+    </site-header>
     <!-- END: Main Navigation -->
     <main>
       <!-- BEGIN: Hero Section -->
@@ -47,9 +218,8 @@
           />
           <h1 class="section-title">Крючки-вешалки</h1>
           <p class="hero-desc">
-            В нашем интернет-магазине представлен широкий<br />
-            ассортимент крючков разных цветов и размеров.<br />
-            Качество гарантировано производителем!
+            Широкий ассортимент крючков разных цветов и<br />
+            размеров. Качество гарантировано производителем!
           </p>
           <!-- Pagination dots -->
           <div class="pagination">
@@ -60,12 +230,12 @@
             <div class="dot"></div>
             <div class="dot"></div>
           </div>
-          <button class="btn-primary">Выбрать товар</button>
+          <button class="btn-primary">Весь каталог</button>
         </div>
       </section>
       <!-- END: Hero Section -->
       <!-- BEGIN: About Company -->
-      <section class="about-section container">
+      <section class="about-section container" id="about">
         <h2 class="section-title">О компании</h2>
         <div class="about-grid">
           <!-- Card 1 -->
@@ -170,30 +340,56 @@
       </section>
       <!-- END: Stats Section -->
       <!-- BEGIN: Catalog -->
-      <section class="catalog-section container">
-        <h2 class="section-title">Каталог</h2>
-        <div class="catalog-grid">
-          <div class="catalog-item">
-            <img
-              alt="Скобяные изделия"
-              class="catalog-img"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmC47XTrN8TKYqocHUzLj9yMyGwqMrshvUUqNKdwGikmBaSiWwHsWFZB2xdMCRsPbBx6Z2FM2f-h6refQzguP25hDh6ceHZrCNlz2ip__7g_J1FdakdFNW09Qf1y46pFkULvnDmfb10kG0hVwU5W4e7UCphpHFKNBF1hnvLaMhxfTEBpS_ttNG3NKuEDWCXFnIKgBBglBx1QMWFuK3GWbpNbhLkv3avPxyXfnBZgg_gzhwHy2lr06xSg"
-            />
-            <div class="catalog-title">Скобяные изделия</div>
+      <section class="catalog-section" id="catalog">
+        <div class="container">
+          <h2 class="section-title">Каталог</h2>
+          <div class="catalog-grid">
+            <div class="catalog-item">
+              <img
+                alt="Скобяные изделия"
+                class="catalog-img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmC47XTrN8TKYqocHUzLj9yMyGwqMrshvUUqNKdwGikmBaSiWwHsWFZB2xdMCRsPbBx6Z2FM2f-h6refQzguP25hDh6ceHZrCNlz2ip__7g_J1FdakdFNW09Qf1y46pFkULvnDmfb10kG0hVwU5W4e7UCphpHFKNBF1hnvLaMhxfTEBpS_ttNG3NKuEDWCXFnIKgBBglBx1QMWFuK3GWbpNbhLkv3avPxyXfnBZgg_gzhwHy2lr06xSg"
+              />
+              <div class="catalog-title">Скобяные изделия</div>
+            </div>
+            <div class="catalog-item">
+              <img
+                alt="Мебельная фурнитура"
+                class="catalog-img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8CMm8gbIqfh9xE2f-Nm2X_gU_rUko18ODX_1LupqEf9nThUnhIGOMLNlZz7YBYF5VDy0W406QWBj3mmutNRC34NRMnfkGYWpWHL5D-fG1n8PYxQ2O_cBaTIAeAZH-Yjc5blm61Kp3wphHY1Dd8vnMRStrm_zIffFywp4q_FLtV7aIcciRZ39M4JaFFz8MfpkN33X8GBwQGKpVNnBhNXJ2CYgFIP0TwUH8AqNenPvmS0hAa4ok5EUzTIfTEzdVLbdAMaEZBu51P7t6BOEDiqtsur8_RpAtAbsBXDCKlco-TjBylhQnVNGzQseju0cyw"
+              />
+              <div class="catalog-title">Мебельная фурнитура</div>
+            </div>
+            <div class="catalog-item">
+              <img
+                alt="Строительная фурнитура"
+                class="catalog-img"
+                src="https://picsum.photos/seed/building-hardware/400/300"
+              />
+              <div class="catalog-title">Строительная фурнитура</div>
+            </div>
+            <div class="catalog-item">
+              <img
+                alt="Перфорированный крепеж"
+                class="catalog-img"
+                src="https://picsum.photos/seed/perforated-fastener/400/300"
+              />
+              <div class="catalog-title">Перфорированный крепеж</div>
+            </div>
+            <div class="catalog-item">
+              <img
+                alt="Комплектующие"
+                class="catalog-img"
+                src="https://picsum.photos/seed/components-hardware/400/300"
+              />
+              <div class="catalog-title">Комплектующие</div>
+            </div>
           </div>
-          <div class="catalog-item">
-            <img
-              alt="Мебельная фурнитура"
-              class="catalog-img"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8CMm8gbIqfh9xE2f-Nm2X_gU_rUko18ODX_1LupqEf9nThUnhIGOMLNlZz7YBYF5VDy0W406QWBj3mmutNRC34NRMnfkGYWpWHL5D-fG1n8PYxQ2O_cBaTIAeAZH-Yjc5blm61Kp3wphHY1Dd8vnMRStrm_zIffFywp4XEKfL-bMwvOSf340pY_1L6PTnoloTxARhekRJRmVEyxWgHvx9l-qAYML62BPuy-3wRsVMNJoSFSHPvl534Q"
-            />
-            <div class="catalog-title">Мебельная фурнитура</div>
+          <div class="text-center">
+            <button class="btn-outline" style="background-color: white">
+              Весь каталог
+            </button>
           </div>
-        </div>
-        <div class="text-center">
-          <button class="btn-outline" style="background-color: white">
-            Все категории
-          </button>
         </div>
       </section>
       <!-- END: Catalog -->
@@ -204,94 +400,108 @@
           Мебельная фурнитура, скобяные изделия и перфорированный крепеж от
           производителя
         </h2>
-        <div class="image-wrapper">
-          <img
-            alt="Скобяное изделие"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pBp2pRrLDGFPMzQ8fOje5gy5BfX4ODVA5m1FSnq8fx-vl9D7-D_WEfrAyGQDchKa36Y-suju_4ueBF1bo4aZ16qUZfOp4TFX_eZaLEgg_tCjyjMp66DQ1W4ymG0oBuWmxGq6yIo8NpNTzhAhGEhON5SBKWHVUdouAz2t5uxyVNuIPjOL-IusB1BgQD4PshO-9b5lurVR9m7nlivVwgJcvgPGRNmcTPXwynSiYgwm8np00AFgXjRR1w"
-          />
+        <div class="intro-layout">
+          <div>
+            <p>
+              Завод «Металлист» работает с 1937 года, это одно из старейших
+              предприятий России. Основные сферы нашей деятельности –
+              <span class="highlight-text"
+                >производство мебельной фурнитуры, скобяных изделий и
+                перфорированного крепежа</span
+              >. Мы предлагаем огромный ассортимент продукции – свыше 1000
+              наименований, наши преимущества:
+            </p>
+            <ul>
+              <li>надежная качественная продукция;</li>
+              <li>наличие предлагаемых изделий на складе;</li>
+              <li>возможность изготовления продукции на заказ;</li>
+              <li>отлаженная логистика;</li>
+              <li>небольшие минимальные объемы отгрузки;</li>
+              <li>работа по России, странам ближнего и дальнего зарубежья;</li>
+              <li>бесплатная доставка до транспортной компании;</li>
+              <li>честные заводские цены.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Задвижка дверная"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pBp2pRrLDGFPMzQ8fOje5gy5BfX4ODVA5m1FSnq8fx-vl9D7-D_WEfrAyGQDchKa36Y-suju_4ueBF1bo4aZ16qUZfOp4TFX_eZaLEgg_tCjyjMp66DQ1W4ymG0oBuWmxGq6yIo8NpNTzhAhGEhON5SBKWHVUdouAz2t5uxyVNuIPjOL-IusB1BgQD4PshO-9b5lurVR9m7nlivVwgJcvgPGRNmcTPXwynSiYgwm8np00AFgXjRR1w"
+            />
+          </div>
         </div>
-        <p>
-          Завод «Металлист» работает с 1937 года, это одно из старейших
-          предприятий России. Основные сферы нашей деятельности —
-          <span class="highlight-text"
-            >производство мебельной фурнитуры, скобяных изделий и
-            перфорированного крепежа</span
-          >. Мы предлагаем огромный ассортимент продукции – свыше 1000
-          наименований, наши преимущества:
-        </p>
-        <ul>
-          <li>надежная качественная продукция;</li>
-          <li>наличие предлагаемых изделий на складе;</li>
-          <li>возможность изготовления продукции на заказ;</li>
-          <li>отлаженная логистика;</li>
-          <li>небольшие минимальные объемы отгрузки;</li>
-          <li>работа по России, странам ближнего и дальнего зарубежья;</li>
-          <li>бесплатная доставка до транспортной компании;</li>
-          <li>честные заводские цены.</li>
-        </ul>
       </section>
       <!-- END: Introduction Section -->
       <!-- BEGIN: Assortment Section -->
       <section class="content-section">
         <h2>Ассортимент выпускаемой продукции</h2>
-        <div class="image-wrapper">
-          <img
-            alt="Крепежный уголок"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALR4GXqe8b-zZpPDg5aZf3HJzTBeDAMcdbILCC8YCIXkHGQ9v4rJdyVDP-wUly8OoUqt-s-EqFuDB1xil11aGcxRUu6WJVGCyPX3VgWjr9o28_ApQQkAPa5llYO5pMO-NRWyQy8IazKtNfSJ-0xgB3wuNWgid-TcY-8j7apSZjVF6LWL_2VowXPjfyDLNLS2YniTCn6BOEDiqtsur8_RpAtAbsBXDCKlco-TjBylhQnVNGzQseju0cyw"
-          />
+        <div class="intro-layout">
+          <div>
+            <p>
+              На российском рынке множество компаний предлагают мебельную
+              фурнитуру, скобяные изделия и перфорированный крепеж. При этом во
+              многих случаях речь идет о перепродаже дешевой китайской продукции
+              сомнительного качества.
+            </p>
+            <p>
+              <span class="highlight-text"
+                >Завод «Металлист» – одна из самых известных компаний,
+                занимающихся производством мебельной фурнитуры в России</span
+              >. По сравнению с другими заводами у нас самый большой
+              ассортимент, при этом мы предлагаем по-настоящему качественную
+              продукцию. Вы можете заказать:
+            </p>
+            <ul>
+              <li>петли – рояльные и карточные;</li>
+              <li>уголки;</li>
+              <li>обычные кронштейны;</li>
+              <li>
+                мебельные крепежные пластины, соединители, сцепки, захваты,
+                подвески;
+              </li>
+              <li>колеса и опоры;</li>
+              <li>уголки для алюминиевых профилей;</li>
+              <li>стяжки;</li>
+              <li>консоли;</li>
+              <li>крючки-вешалки и пр.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Крепежный уголок перфорированный"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuALR4GXqe8b-zZpPDg5aZf3HJzTBeDAMcdbILCC8YCIXkHGQ9v4rJdyVDP-wUly8OoUqt-s-EqFuDB1xil11aGcxRUu6WJVGCyPX3VgWjr9o28_ApQQkAPa5llYO5pMO-NRWyQy8IazKtNfSJ-0xgB3wuNWgid-TcY-8j7apSZjVF6LWL_2VowXPjfyDLNLS2YniTCn6BOEDiqtsur8_RpAtAbsBXDCKlco-TjBylhQnVNGzQseju0cyw"
+            />
+          </div>
         </div>
-        <p>
-          На российском рынке множество компаний предлагает мебельную фурнитуру,
-          скобяные изделия и перфорированный крепеж. При этом во многих случаях
-          речь идет о перепродаже дешевой китайской продукции сомнительного
-          качества.
-        </p>
-        <p>
-          <span class="highlight-text"
-            >Завод «Металлист» – одна из самых известных компаний, занимающихся
-            производством мебельной фурнитуры в России</span
-          >. По сравнению с другими заводами у нас самый большой ассортимент,
-          при этом мы предлагаем по-настоящему качественную продукцию. Вы можете
-          заказать:
-        </p>
-        <ul>
-          <li>петли – рояльные и карточные;</li>
-          <li>уголки;</li>
-          <li>обычные кронштейны;</li>
-          <li>
-            мебельные крепежные пластины, соединители, сцепки, захваты,
-            подвески;
-          </li>
-          <li>колеса и опоры;</li>
-          <li>уголки для алюминиевых профилей;</li>
-          <li>стяжки;</li>
-          <li>консоли;</li>
-          <li>крючки-вешалки и пр.</li>
-        </ul>
-        <div class="image-wrapper">
-          <img
-            alt="Петля"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBVgIjbDQ_7d6lP8b95RVx6p1Pd9_fTSenwFzVPL4V5Sf7gsr7HjoBC7YwLtvmUaPl-Xc2p6qIPxChL6JchRXniN1G654dp4q_FLtV7aIcciRZ39M4JaFFz8MfpkN33X8GBwQGKpVNnBhNXJ2CYgFIP0TwUH8AqNenPvmS0hAa4ok5EUzTIfTEzdVLbdAMaEZBu51P7t6L7mZZdKbl5hUTVGrLlOBcMdNfMHHDIUIov6-zYDQYzmuqEg"
-          />
+
+        <div class="intro-layout intro-layout--reverse">
+          <div>
+            <p>
+              Главные отличительные особенности нашей продукции – стильный
+              внешний вид, качественное исполнение и адекватная цена при
+              безупречном качестве. Мы маркируем нашу продукцию буквой «М» –
+              «Металлист», что исключает любые сомнения в ее производителе.
+            </p>
+            <p class="highlight-text">
+              Всегда в наличии и разнообразные скобяные изделия:
+            </p>
+            <ul>
+              <li>петли – дверные, гаражные, петли-стрелы и пр.;</li>
+              <li>держатели для гардин;</li>
+              <li>ручки – откидные, литые, ручки-скобы и ручки-кнопки;</li>
+              <li>задвижки – накладные, дверные, форточные;</li>
+              <li>замки;</li>
+              <li>пружины;</li>
+              <li>DIN-рейки и многое другое.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Петля дверная"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBVgIjbDQ_7d6lP8b95RVx6p1Pd9_fTSenwFzVPL4V5Sf7gsr7HjoBC7YwLtvmUaPl-Xc2p6qIPxChL6JchRXniN1G654dp4q_FLtV7aIcciRZ39M4JaFFz8MfpkN33X8GBwQGKpVNnBhNXJ2CYgFIP0TwUH8AqNenPvmS0hAa4ok5EUzTIfTEzdVLbdAMaEZBu51P7t6L7mZZdKbl5hUTVGrLlOBcMdNfMHHDIUIov6-zYDQYzmuqEg"
+            />
+          </div>
         </div>
-        <p>
-          Главные отличительные особенности нашей продукции – стильный внешний
-          вид, качественное исполнение и адекватная цена при безупречном
-          качестве. Мы маркируем нашу продукцию буквой «М» – «Металлист», что
-          исключает любые сомнения в ее производителе.
-        </p>
-        <p class="highlight-text">
-          Всегда в наличии и разнообразные скобяные изделия:
-        </p>
-        <ul>
-          <li>петли – дверные, гаражные, петли-стрелы и пр.;</li>
-          <li>держатели для гардин;</li>
-          <li>ручки – откидные, литые, ручки-скобы и ручки-кнопки;</li>
-          <li>задвижки – накладные, дверные, форточные;</li>
-          <li>замки;</li>
-          <li>пружины;</li>
-          <li>DIN-рейки и многое другое.</li>
-        </ul>
+
         <p>
           <span class="highlight-text"
             >Наконец, у нас налажено производство перфорированного крепежа</span
@@ -306,7 +516,7 @@
       </section>
       <!-- END: Assortment Section -->
       <!-- BEGIN: Contact Section -->
-      <div class="contact-card">
+      <div class="contact-card" id="contacts-mini">
         <p>
           Мы работаем по Москве, Перми и другим городам России, странам ближнего
           и дальнего зарубежья. Вы можете оформить заказ через сайт, написать на
@@ -330,144 +540,213 @@
       <!-- END: Contact Section -->
 
       <!-- BEGIN: Contact Form -->
-      <section class="contact-section container">
-        <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
-        <form>
-          <div class="form-group">
-            <input
-              class="form-input"
-              placeholder="Имя*"
-              required=""
-              type="text"
-            />
+      <contact-form>
+        <section class="contact-section">
+          <div class="contact-inner">
+            <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
+            <form novalidate>
+              <div class="form-group">
+                <label class="visually-hidden" for="cf-name">Имя</label>
+                <input
+                  class="form-input"
+                  id="cf-name"
+                  name="name"
+                  placeholder="Имя*"
+                  required
+                  type="text"
+                  autocomplete="name"
+                />
+                <span
+                  class="form-error"
+                  data-error="name"
+                  aria-live="polite"
+                ></span>
+              </div>
+              <div class="form-group">
+                <label class="visually-hidden" for="cf-email">E-mail</label>
+                <input
+                  class="form-input"
+                  id="cf-email"
+                  name="email"
+                  placeholder="E-mail*"
+                  required
+                  type="email"
+                  autocomplete="email"
+                />
+                <span
+                  class="form-error"
+                  data-error="email"
+                  aria-live="polite"
+                ></span>
+              </div>
+              <div class="form-group">
+                <label class="visually-hidden" for="cf-comment"
+                  >Комментарий</label
+                >
+                <textarea
+                  class="form-input"
+                  id="cf-comment"
+                  name="comment"
+                  placeholder="Ваш комментарий*"
+                  required
+                  rows="4"
+                ></textarea>
+                <span
+                  class="form-error"
+                  data-error="comment"
+                  aria-live="polite"
+                ></span>
+              </div>
+              <div class="form-checkbox-group">
+                <div class="checkbox-container">
+                  <input
+                    class="form-checkbox"
+                    id="terms"
+                    name="consent"
+                    required
+                    type="checkbox"
+                  />
+                </div>
+                <label class="form-checkbox-label" for="terms">
+                  Отправляя запрос, я принимаю условия
+                  <a href="src/pages/privacy.html"
+                    >Пользовательского соглашения</a
+                  >
+                  и подтверждаю обязательное согласие с
+                  <a href="src/pages/privacy.html"
+                    >Политикой конфиденциальности</a
+                  >.
+                </label>
+              </div>
+              <span
+                class="form-error"
+                data-error="consent"
+                aria-live="polite"
+                style="
+                  display: block;
+                  margin-bottom: 0.75rem;
+                  font-size: 0.75rem;
+                  color: var(--brand-red);
+                "
+              ></span>
+              <button class="btn-primary" type="submit">Отправить</button>
+              <p
+                data-status
+                role="status"
+                aria-live="polite"
+                style="
+                  font-size: 0.875rem;
+                  margin-top: 0.75rem;
+                  min-height: 1.25rem;
+                "
+              ></p>
+            </form>
           </div>
-          <div class="form-group">
-            <input
-              class="form-input"
-              placeholder="E-mail*"
-              required=""
-              type="email"
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-input"
-              placeholder="Ваш комментарий*"
-              required=""
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="form-checkbox-group">
-            <div class="checkbox-container">
-              <input
-                class="form-checkbox"
-                id="terms"
-                required=""
-                type="checkbox"
-              />
-            </div>
-            <label class="form-checkbox-label" for="terms">
-              Отправляя запрос, я принимаю условия
-              <a href="#">Пользовательского соглашения</a> и подтверждаю
-              обязательное согласие с
-              <a href="#">Политикой конфиденциальности</a>.
-            </label>
-          </div>
-          <button class="btn-primary" type="submit">Отправить</button>
-        </form>
-      </section>
+        </section>
+      </contact-form>
       <!-- END: Contact Form -->
     </main>
     <!-- BEGIN: Footer -->
-    <footer class="footer">
-      <div class="container footer-grid">
-        <!-- Column 1 -->
-        <div>
-          <h4 class="footer-title">Продукция</h4>
-          <ul class="footer-links">
-            <li><a href="#">Скобяные изделия</a></li>
-            <li><a href="#">Мебельная фурнитура</a></li>
-            <li><a href="#">Перфорированный крепеж</a></li>
-            <li><a href="#">Комплектующие</a></li>
-          </ul>
+    <site-footer>
+      <footer class="footer">
+        <div class="container footer-main">
+          <div>
+            <h4 class="footer-title">Компания</h4>
+            <ul class="footer-nav">
+              <li><a href="#about">О компании</a></li>
+              <li><a href="#catalog">Каталог</a></li>
+              <li><a href="public/pricelist.pdf">Документы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Помощь</h4>
+            <ul class="footer-links">
+              <li><a href="#">Доставка и оплата</a></li>
+              <li><a href="#">Возврат</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+              <li>
+                <a href="src/pages/privacy.html">Политика конфиденциальности</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-contacts" id="contacts">
+            <h4 class="footer-title">Контакты</h4>
+            <a class="contact-phone" href="tel:+70000000000"
+              >+7 (000) 000-00-00</a
+            >
+            <ul class="contact-list">
+              <li class="contact-list-item">
+                <svg
+                  class="contact-icon contact-icon-mt"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <span>[[address]]</span>
+              </li>
+              <li class="contact-list-item">
+                <svg
+                  class="contact-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <a class="hover:underline" href="mailto:smeta@metallist.ru"
+                  >[[email@email.em]]</a
+                >
+              </li>
+              <li class="contact-list-item">
+                <svg
+                  class="contact-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <span>ПН. — ПТ. с 8:00 до 17:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-copyright">
+            <p>© 2026 Завод «Металлист». Все права защищены.</p>
+            <p>© WSS «Fittings Factory»</p>
+          </div>
         </div>
-        <!-- Column 2 -->
-        <div>
-          <ul class="footer-nav">
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Акции</a></li>
-            <li><a href="#">Документы</a></li>
-            <li><a href="#">Отзывы</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Contact Info -->
-      <div class="container footer-contact">
-        <h4 class="footer-title">Контакты</h4>
-        <a class="contact-phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
-        <ul class="contact-list">
-          <li class="contact-list-item">
-            <svg
-              class="contact-icon contact-icon-mt"
-              fill="none"
-              stroke="currentColor"
-              viewbox="0 0 24 24"
-            >
-              <path
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-              <path
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-            </svg>
-            <span>[[address]]</span>
-          </li>
-          <li class="contact-list-item">
-            <svg
-              class="contact-icon"
-              fill="none"
-              stroke="currentColor"
-              viewbox="0 0 24 24"
-            >
-              <path
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-            </svg>
-            <a class="hover:underline" href="mailto:smeta@metallist.ru"
-              >[[email@email.em]]</a
-            >
-          </li>
-          <li class="contact-list-item">
-            <svg
-              class="contact-icon"
-              fill="none"
-              stroke="currentColor"
-              viewbox="0 0 24 24"
-            >
-              <path
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-            </svg>
-            <span>ПН. — ПТ. с 8:00 до 17:00</span>
-          </li>
-        </ul>
-        <div class="footer-copyright">
-          <p>© WSS «Fittings Factory»</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </site-footer>
     <!-- END: Footer -->
   </body>
 </html>

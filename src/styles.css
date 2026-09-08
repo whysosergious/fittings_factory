@@ -63,14 +63,11 @@ img {
   display: block;
 }
 
-/* Header */
+/* Header — responsive, updated for actions + burger */
 .header {
   background-color: var(--brand-red);
   color: #fff;
-  padding: 1rem 1rem 0.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  padding: 0.75rem 1rem;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -79,22 +76,256 @@ img {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .logo {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Desktop nav – hidden on mobile */
+.header-nav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.header-nav a {
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition:
+    border-color 0.15s,
+    opacity 0.15s;
+  opacity: 0.95;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+  border-color: var(--brand-yellow);
+  opacity: 1;
+  outline: none;
+}
+
+/* Right side actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.header-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s,
+    transform 0.15s;
+  opacity: 0.96;
+}
+
+.header-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+}
+
+.header-icon-btn:active {
+  transform: scale(0.96);
+}
+
+.header-icon-btn:focus-visible {
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 2px;
+}
+
+.header-icon-btn svg,
+.header-icon-btn img {
+  width: 1.45rem;
+  height: 1.45rem;
 }
 
 .menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   color: #fff;
+  transition: background-color 0.15s;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.menu-btn:focus-visible {
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 2px;
 }
 
 .menu-btn svg {
   width: 2rem;
   height: 2rem;
+}
+
+/* Mobile drawer & overlay (controlled by site-header component) */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease;
+  z-index: 60;
+}
+
+.mobile-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(84vw, 340px);
+  height: 100dvh;
+  background: #fff;
+  color: var(--gray-800);
+  z-index: 70;
+  transform: translateX(100%);
+  transition: transform 0.26s cubic-bezier(0.32, 0.72, 0, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.18);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.mobile-drawer-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+}
+
+.drawer-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  color: var(--gray-600);
+  transition: background-color 0.15s;
+}
+
+.drawer-close-btn:hover {
+  background: var(--gray-100);
+}
+
+.drawer-close-btn:focus-visible {
+  outline: 2px solid var(--brand-red);
+  outline-offset: 2px;
+}
+
+.drawer-close-btn svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.mobile-nav {
+  padding: 0.5rem 0;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  border-bottom: 1px solid var(--gray-50);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible {
+  background: var(--gray-50);
+  color: var(--brand-red);
+  outline: none;
+}
+
+.mobile-nav a svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.mobile-drawer-contacts {
+  margin-top: auto;
+  padding: 1.25rem;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.mobile-drawer-contacts .contact-phone {
+  color: var(--brand-red);
+  font-size: 1.15rem;
+}
+
+.mobile-drawer-contacts p {
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-top: 0.5rem;
 }
 
 /* Hero Section */
@@ -271,11 +502,13 @@ img {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   background-color: var(--gray-50);
+  width: 100%;
 }
 
 .catalog-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -285,6 +518,8 @@ img {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  flex: 0 1 100%;
+  max-width: 100%;
 }
 
 .catalog-img {
@@ -450,6 +685,30 @@ img {
   margin-top: 2rem;
 }
 
+/* Footer new single-row system (mobile: 2 cols top + contacts full width) */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  font-size: 0.875rem;
+}
+
+.footer-main .footer-contacts {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footer-main .footer-copyright {
+  grid-column: 1 / -1;
+}
+
+/* Contact inner wrapper - ensures title aligns with fields */
+.contact-inner {
+  padding: 0 1rem;
+}
+
 /* content section */
 .content-section {
   padding: 1.5rem;
@@ -501,4 +760,345 @@ img {
 .highlight-text {
   font-weight: bold;
   color: var(--text-dark);
+}
+
+/* Container centered */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Intro / content sections with side image — matches screenshot */
+.content-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.content-section ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.content-section ul li {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.intro-layout {
+  display: block;
+}
+
+.intro-image {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+  display: block;
+  max-width: 280px;
+  margin: 0 auto 1.25rem;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 640px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-item {
+    flex: 0 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+
+  .hero .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0.85rem 1.5rem;
+  }
+
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .about-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-grid {
+    gap: 1.25rem;
+  }
+
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .stats-section .text-center {
+    grid-column: 1 / -1;
+  }
+
+  .stat-item {
+    margin-bottom: 0;
+  }
+
+  .content-section {
+    padding: 2rem;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+  }
+
+  .content-section + .content-section {
+    margin-top: 0.5rem;
+  }
+
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 1.5rem 2rem;
+    align-items: start;
+  }
+
+  .intro-image {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .intro-layout--reverse {
+    margin-top: 1.25rem;
+  }
+
+  .contact-card {
+    max-width: 1024px;
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+  }
+
+  /* Contact form: full-width background, inner centered and title aligned with fields */
+  .contact-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-section.container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .contact-section .section-title {
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  /* Footer — tablet: single row 3 cols */
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-main .footer-contacts {
+    grid-column: auto;
+    order: -1;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .footer-main .footer-copyright {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 0 1.5rem;
+  }
+
+  .header-actions {
+    margin-left: 0;
+  }
+
+  /* Hide burger on desktop – JS will keep it hidden via CSS, but we hide visually */
+  .menu-btn {
+    display: none;
+  }
+
+  /* Drawer never shows on desktop */
+  .mobile-drawer,
+  .mobile-overlay {
+    display: none !important;
+  }
+
+  /* Hero stays full-width stacked on all breakpoints */
+  .hero .container {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 0;
+    max-height: none;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .catalog-item {
+    flex: 0 1 calc(33.333% - 1rem);
+    max-width: 360px;
+  }
+
+  .catalog-grid {
+    gap: 1.5rem;
+  }
+
+  .catalog-img {
+    height: 14rem;
+  }
+
+  .content-section {
+    padding: 2.5rem 2.5rem;
+  }
+
+  .contact-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .contact-inner {
+    max-width: 800px;
+  }
+
+  /* Section headings centered on desktop, contact form left */
+  .section-title {
+    text-align: center;
+  }
+
+  .content-section h2 {
+    text-align: center;
+  }
+
+  .contact-section .section-title {
+    text-align: left;
+  }
+
+  .footer {
+    padding-top: 2.5rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .header-inner {
+    padding: 0 0.5rem;
+  }
+
+  .hero .section-title {
+    font-size: 2rem;
+  }
+
+  .about-grid {
+    gap: 1.75rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form-error {
+  min-height: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-drawer,
+  .mobile-overlay,
+  .header-icon-btn,
+  .btn-primary,
+  .btn-outline {
+    transition: none;
+  }
 }
