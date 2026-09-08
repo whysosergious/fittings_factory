@@ -345,6 +345,7 @@ img {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
+  background-color: var(--brand-gray);
 }
 
 .hero-track {
@@ -372,10 +373,10 @@ img {
 }
 
 .hero-panel {
-  background: #fff;
+  background: transparent;
   padding: 1.5rem 1rem 1.75rem;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 0;
   max-width: 100%;
 }
 
@@ -415,25 +416,32 @@ img {
   height: 0.5rem;
   border-radius: 9999px;
   background-color: var(--gray-500);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 0 1px rgba(31, 41, 55, 0.18);
+  border: none;
   cursor: pointer;
   padding: 0;
-  transition:
-    background-color 0.2s,
-    border-color 0.2s,
-    box-shadow 0.2s;
+  transition: background-color 0.2s;
 }
 
 .hero-pagination .dot.is-active,
 .hero-pagination .dot.active {
   background-color: var(--brand-red);
-  border-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
 }
 
 .hero-panel .hero-cta {
-  margin-top: 0;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats-section .btn-outline {
+  display: inline-block;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.catalog-section .btn-outline {
+  display: inline-block;
+  margin-top: 2rem;
 }
 
 .container {
@@ -462,6 +470,7 @@ img {
 }
 
 .btn-primary {
+  display: inline-block;
   background-color: var(--brand-red);
   color: #fff;
   font-weight: 700;
@@ -575,6 +584,7 @@ img {
 }
 
 .btn-outline {
+  display: inline-block;
   border: 1px solid var(--gray-300);
   color: var(--brand-dark);
   font-weight: 700;
@@ -964,13 +974,15 @@ img {
 }
 
 .intro-image {
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 10px;
-  background: #fff;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   display: block;
-  max-width: 280px;
-  margin: 0 auto 1.25rem;
+  max-width: 300px;
+  margin: 0 auto 1.5rem;
 }
 
 .intro-image img {
@@ -979,6 +991,8 @@ img {
   display: block;
   border: none;
   padding: 0;
+  border-radius: 3px;
+  background: #fff;
 }
 
 /* Responsive breakpoints */
@@ -1031,23 +1045,24 @@ img {
   }
 
   .about-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .about-grid {
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .stats-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.75rem;
     text-align: left;
   }
 
   .stats-section .text-center {
     grid-column: 1 / -1;
+    margin-top: 2rem;
   }
 
   .stat-item {
@@ -1055,7 +1070,7 @@ img {
   }
 
   .content-section {
-    padding: 2rem;
+    padding: 2.5rem;
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
@@ -1063,7 +1078,7 @@ img {
   }
 
   .content-section + .content-section {
-    margin-top: 0.5rem;
+    margin-top: 1.75rem;
   }
 
   .intro-layout {
@@ -1236,16 +1251,26 @@ img {
   }
 
   .content-section {
-    padding: 2.5rem 2.5rem;
+    padding: 3rem 2.5rem;
   }
 
-  .contact-section {
+  .catalog-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
 
+  .contact-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
   .contact-inner {
     max-width: 800px;
+  }
+
+  .catalog-section .text-center,
+  .stats-section .text-center {
+    margin-top: 2rem;
   }
 
   /* Section headings centered on desktop, contact form left */

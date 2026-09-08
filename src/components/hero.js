@@ -107,9 +107,10 @@ export class HeroSlideshow {
       }
     });
 
-    // CTA button scrolls to catalog
+    // CTA is now a download link (Скачать каталог) — no scroll handling needed
+    // kept for backwards compat if CTA is a button without download attribute
     const cta = this.root.querySelector(".hero-cta");
-    if (cta) {
+    if (cta && !cta.hasAttribute("download") && cta.tagName.toLowerCase() === "button") {
       cta.addEventListener("click", (e) => {
         const catalog = document.querySelector("#catalog");
         if (!catalog) return;
