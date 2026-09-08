@@ -6,12 +6,12 @@
     <title>Мебельная фурнитура, скобяные изделия, перфорированный крепеж</title>
     <meta
       name="description"
-      content="Завод «Металлист» с 1937 года — производитель мебельной фурнитуры, скобяных изделий и перфорированного крепежа. 2000+ позиций, доставка по России и СНГ."
+      content="[[COMPANY_NAME_PLACEHOLDER]] с 1937 года — производитель мебельной фурнитуры, скобяных изделий и перфорированного крепежа. 2000+ позиций, доставка по Беларуси."
     />
     <link rel="canonical" href="/" />
     <meta
       property="og:title"
-      content="Завод Металлист — мебельная фурнитура и крепеж"
+      content="[[COMPANY_NAME_PLACEHOLDER]] — мебельная фурнитура и крепеж"
     />
     <meta
       property="og:description"
@@ -23,16 +23,21 @@
     <script type="module" src="src/components/site-header.js"></script>
     <script type="module" src="src/components/site-footer.js"></script>
     <script type="module" src="src/components/contact-form.js"></script>
+    <script type="module" src="src/components/hero.js"></script>
   </head>
   <body>
     <!-- BEGIN: Main Navigation -->
     <site-header>
       <header class="header">
         <div class="header-inner">
-          <a class="logo" href="/" aria-label="Завод Металлист — на главную">
+          <a
+            class="logo"
+            href="/"
+            aria-label="[[COMPANY_NAME_PLACEHOLDER]] — на главную"
+          >
             <img
               src="public/fittings_logo.svg"
-              alt="Завод Металлист"
+              alt="[[COMPANY_NAME_PLACEHOLDER]]"
               height="40"
               width="40"
             />
@@ -41,15 +46,15 @@
           <nav class="header-nav" aria-label="Основная навигация">
             <a href="#about">О компании</a>
             <a href="#catalog">Каталог</a>
-            <a href="public/pricelist.pdf">Документы</a>
+            <a href="src/pages/documents.html">Документы</a>
             <a href="#contacts">Контакты</a>
           </nav>
 
           <div class="header-actions">
             <a
               class="header-icon-btn"
-              href="tel:+74951524700"
-              aria-label="Позвонить: +7 (495) 152-47-00"
+              href="tel:+375296129636"
+              aria-label="Позвонить: +375 (29) 612-96-36"
             >
               <img
                 src="public/icons/phone.svg"
@@ -65,8 +70,8 @@
             </a>
             <a
               class="header-icon-btn"
-              href="mailto:sales@metallist.org"
-              aria-label="Написать: sales@metallist.org"
+              href="mailto:skarankevich@yandex.by"
+              aria-label="Написать: skarankevich@yandex.by"
             >
               <img
                 src="public/icons/mail.svg"
@@ -165,7 +170,7 @@
               <path d="M9 6l6 6-6 6" />
             </svg>
           </a>
-          <a href="public/pricelist.pdf"
+          <a href="src/pages/documents.html"
             >Документы
             <svg
               aria-hidden="true"
@@ -195,42 +200,193 @@
           </a>
         </nav>
         <div class="mobile-drawer-contacts">
-          <a class="contact-phone" href="tel:+74951524700"
-            >+7 (495) 152-47-00</a
+          <a class="contact-phone" href="tel:+375296129636"
+            >+375 (29) 612-96-36</a
           >
           <p>
-            ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:sales@metallist.org"
-              >sales@metallist.org</a
+            ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:skarankevich@yandex.by"
+              >skarankevich@yandex.by</a
             >
           </p>
         </div>
       </div>
     </site-header>
+
     <!-- END: Main Navigation -->
     <main>
       <!-- BEGIN: Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <img
-            alt="Крючки-вешалки"
-            class="hero-img"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSjdcEVeiPT2eeCoSIkf808XjWf9W_Za6vhbZleX8du6VGeFAxE4Jcfd94-fjeo56umIA9ws_2wC-Pl1GQNXVtBi24d3SVPYajDNevUG4oRKSC1Fo85Vc4NLgodnrHc2j4jR2JP0gI6KgP8U4wCBbjhoLjU9OrD3n9tuDq6aImotfESly-TDoXn-BkHZtUzHLIhmzVfmqVYLewFHhXDzQO3-0_Uzkgv1X3vZnvSXdv0jhSVe9fDZD4g"
-          />
-          <h1 class="section-title">Крючки-вешалки</h1>
-          <p class="hero-desc">
-            Широкий ассортимент крючков разных цветов и<br />
-            размеров. Качество гарантировано производителем!
-          </p>
-          <!-- Pagination dots -->
-          <div class="pagination">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+      <section
+        class="hero"
+        id="hero"
+        aria-roledescription="carousel"
+        aria-label="Популярные предложения"
+      >
+        <div class="hero-viewport">
+          <div class="hero-track">
+            <article
+              class="hero-slide is-active"
+              data-index="0"
+              aria-roledescription="slide"
+              aria-label="1 из 6"
+              aria-hidden="false"
+            >
+              <img
+                class="hero-img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSjdcEVeiPT2eeCoSIkf808XjWf9W_Za6vhbZleX8du6VGeFAxE4Jcfd94-fjeo56umIA9ws_2wC-Pl1GQNXVtBi24d3SVPYajDNevUG4oRKSC1Fo85Vc4NLgodnrHc2j4jR2JP0gI6KgP8U4wCBbjhoLjU9OrD3n9tuDq6aImotfESly-TDoXn-BkHZtUzHLIhmzVfmqVYLewFHhXDzQO3-0_Uzkgv1X3vZnvSXdv0jhSVe9fDZD4g"
+                alt="Крючки-вешалки"
+                width="1200"
+                height="600"
+                loading="eager"
+              />
+            </article>
+            <article
+              class="hero-slide"
+              data-index="1"
+              aria-roledescription="slide"
+              aria-label="2 из 6"
+              aria-hidden="true"
+            >
+              <img
+                class="hero-img"
+                src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=1200&h=600&fit=crop&q=80"
+                alt="Фурнитура для военных ящиков"
+                width="1200"
+                height="600"
+                loading="lazy"
+              />
+            </article>
+            <article
+              class="hero-slide"
+              data-index="2"
+              aria-roledescription="slide"
+              aria-label="3 из 6"
+              aria-hidden="true"
+            >
+              <img
+                class="hero-img"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=600&fit=crop&q=80"
+                alt="Комплектующие для пластиковых окон"
+                width="1200"
+                height="600"
+                loading="lazy"
+              />
+            </article>
+            <article
+              class="hero-slide"
+              data-index="3"
+              aria-roledescription="slide"
+              aria-label="4 из 6"
+              aria-hidden="true"
+            >
+              <img
+                class="hero-img"
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=600&fit=crop&q=80"
+                alt="Мебельная фурнитура"
+                width="1200"
+                height="600"
+                loading="lazy"
+              />
+            </article>
+            <article
+              class="hero-slide"
+              data-index="4"
+              aria-roledescription="slide"
+              aria-label="5 из 6"
+              aria-hidden="true"
+            >
+              <img
+                class="hero-img"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop&q=80"
+                alt="Скобяные изделия"
+                width="1200"
+                height="600"
+                loading="lazy"
+              />
+            </article>
+            <article
+              class="hero-slide"
+              data-index="5"
+              aria-roledescription="slide"
+              aria-label="6 из 6"
+              aria-hidden="true"
+            >
+              <img
+                class="hero-img"
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&h=600&fit=crop&q=80"
+                alt="Механизмы трансформации"
+                width="1200"
+                height="600"
+                loading="lazy"
+              />
+            </article>
           </div>
-          <button class="btn-primary">Весь каталог</button>
+          <div class="hero-panel">
+            <h1 class="hero-title section-title" id="hero-title">
+              Крючки-вешалки
+            </h1>
+            <p class="hero-desc" id="hero-desc">
+              В нашем интернет-магазине представлен широкий<br />ассортимент
+              крючков разных цветов и размеров.<br />Качество гарантировано
+              производителем!
+            </p>
+            <div
+              class="hero-pagination"
+              role="tablist"
+              aria-label="Навигация по слайдам"
+            >
+              <button
+                class="dot is-active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="hero-slide-0"
+                data-index="0"
+                aria-label="Слайд 1: Крючки-вешалки"
+              ></button>
+              <button
+                class="dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hero-slide-1"
+                data-index="1"
+                aria-label="Слайд 2: Фурнитура для военных ящиков"
+              ></button>
+              <button
+                class="dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hero-slide-2"
+                data-index="2"
+                aria-label="Слайд 3: Комплектующие для пластиковых окон"
+              ></button>
+              <button
+                class="dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hero-slide-3"
+                data-index="3"
+                aria-label="Слайд 4: Мебельная фурнитура"
+              ></button>
+              <button
+                class="dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hero-slide-4"
+                data-index="4"
+                aria-label="Слайд 5: Скобяные изделия"
+              ></button>
+              <button
+                class="dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hero-slide-5"
+                data-index="5"
+                aria-label="Слайд 6: Механизмы трансформации"
+              ></button>
+            </div>
+            <button class="btn-primary hero-cta" type="button">
+              Скачать каталог
+            </button>
+          </div>
         </div>
       </section>
       <!-- END: Hero Section -->
@@ -248,8 +404,8 @@
             </div>
             <h3 class="card-title">Экономия времени и ресурсов</h3>
             <p class="card-desc">
-              Завод «Металлист» производит продукцию в больших объёмах и
-              сокращает время доставки, экономя ваши время и ресурсы.
+              [[COMPANY_NAME_PLACEHOLDER]] производит продукцию в больших
+              объёмах и сокращает время доставки, экономя ваши время и ресурсы.
             </p>
           </div>
           <!-- Card 2 -->
@@ -319,7 +475,7 @@
         <div class="stat-item">
           <div class="stat-number">&gt; 5000</div>
           <div class="stat-label">
-            клиентов по всей России и ближнему зарубежю
+            клиентов по всей Беларуси и ближнему зарубежю
           </div>
         </div>
         <div class="stat-item">
@@ -331,11 +487,12 @@
             1937 <span class="stat-text-lg">ГОД</span>
           </div>
           <div class="stat-label">
-            был создан завод «Металлист» на базе артели «Труженик»
+            был создан завод [[COMPANY_NAME_PLACEHOLDER]] на базе артели
+            «Труженик»
           </div>
         </div>
         <div class="text-center mt-8">
-          <button class="btn-outline">Подробнее</button>
+          <a href="src/pages/about.html" class="btn-outline">Подробнее</a>
         </div>
       </section>
       <!-- END: Stats Section -->
@@ -348,7 +505,7 @@
               <img
                 alt="Скобяные изделия"
                 class="catalog-img"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmC47XTrN8TKYqocHUzLj9yMyGwqMrshvUUqNKdwGikmBaSiWwHsWFZB2xdMCRsPbBx6Z2FM2f-h6refQzguP25hDh6ceHZrCNlz2ip__7g_J1FdakdFNW09Qf1y46pFkULvnDmfb10kG0hVwU5W4e7UCphpHFKNBF1hnvLaMhxfTEBpS_ttNG3NKuEDWCXFnIKgBBglBx1QMWFuK3GWbpNbhLkv3avPxyXfnBZgg_gzhwHy2lr06xSg"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80"
               />
               <div class="catalog-title">Скобяные изделия</div>
             </div>
@@ -356,7 +513,7 @@
               <img
                 alt="Мебельная фурнитура"
                 class="catalog-img"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8CMm8gbIqfh9xE2f-Nm2X_gU_rUko18ODX_1LupqEf9nThUnhIGOMLNlZz7YBYF5VDy0W406QWBj3mmutNRC34NRMnfkGYWpWHL5D-fG1n8PYxQ2O_cBaTIAeAZH-Yjc5blm61Kp3wphHY1Dd8vnMRStrm_zIffFywp4q_FLtV7aIcciRZ39M4JaFFz8MfpkN33X8GBwQGKpVNnBhNXJ2CYgFIP0TwUH8AqNenPvmS0hAa4ok5EUzTIfTEzdVLbdAMaEZBu51P7t6BOEDiqtsur8_RpAtAbsBXDCKlco-TjBylhQnVNGzQseju0cyw"
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&q=80"
               />
               <div class="catalog-title">Мебельная фурнитура</div>
             </div>
@@ -364,7 +521,7 @@
               <img
                 alt="Строительная фурнитура"
                 class="catalog-img"
-                src="https://picsum.photos/seed/building-hardware/400/300"
+                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=300&fit=crop&q=80"
               />
               <div class="catalog-title">Строительная фурнитура</div>
             </div>
@@ -372,7 +529,7 @@
               <img
                 alt="Перфорированный крепеж"
                 class="catalog-img"
-                src="https://picsum.photos/seed/perforated-fastener/400/300"
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&q=80"
               />
               <div class="catalog-title">Перфорированный крепеж</div>
             </div>
@@ -380,7 +537,7 @@
               <img
                 alt="Комплектующие"
                 class="catalog-img"
-                src="https://picsum.photos/seed/components-hardware/400/300"
+                src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=400&h=300&fit=crop&q=80"
               />
               <div class="catalog-title">Комплектующие</div>
             </div>
@@ -403,8 +560,9 @@
         <div class="intro-layout">
           <div>
             <p>
-              Завод «Металлист» работает с 1937 года, это одно из старейших
-              предприятий России. Основные сферы нашей деятельности –
+              [[COMPANY_NAME_PLACEHOLDER]] работает с 1937 года, это одно из
+              старейших предприятий Беларуси. Основные сферы нашей деятельности
+              –
               <span class="highlight-text"
                 >производство мебельной фурнитуры, скобяных изделий и
                 перфорированного крепежа</span
@@ -417,7 +575,9 @@
               <li>возможность изготовления продукции на заказ;</li>
               <li>отлаженная логистика;</li>
               <li>небольшие минимальные объемы отгрузки;</li>
-              <li>работа по России, странам ближнего и дальнего зарубежья;</li>
+              <li>
+                работа по Беларуси, странам ближнего и дальнего зарубежья;
+              </li>
               <li>бесплатная доставка до транспортной компании;</li>
               <li>честные заводские цены.</li>
             </ul>
@@ -437,15 +597,16 @@
         <div class="intro-layout">
           <div>
             <p>
-              На российском рынке множество компаний предлагают мебельную
+              На белорусском рынке множество компаний предлагают мебельную
               фурнитуру, скобяные изделия и перфорированный крепеж. При этом во
               многих случаях речь идет о перепродаже дешевой китайской продукции
               сомнительного качества.
             </p>
             <p>
               <span class="highlight-text"
-                >Завод «Металлист» – одна из самых известных компаний,
-                занимающихся производством мебельной фурнитуры в России</span
+                >[[COMPANY_NAME_PLACEHOLDER]] – одна из самых известных
+                компаний, занимающихся производством мебельной фурнитуры в
+                Беларуси</span
               >. По сравнению с другими заводами у нас самый большой
               ассортимент, при этом мы предлагаем по-настоящему качественную
               продукцию. Вы можете заказать:
@@ -479,7 +640,8 @@
               Главные отличительные особенности нашей продукции – стильный
               внешний вид, качественное исполнение и адекватная цена при
               безупречном качестве. Мы маркируем нашу продукцию буквой «М» –
-              «Металлист», что исключает любые сомнения в ее производителе.
+              [[COMPANY_NAME_PLACEHOLDER]], что исключает любые сомнения в ее
+              производителе.
             </p>
             <p class="highlight-text">
               Всегда в наличии и разнообразные скобяные изделия:
@@ -518,22 +680,16 @@
       <!-- BEGIN: Contact Section -->
       <div class="contact-card" id="contacts-mini">
         <p>
-          Мы работаем по Москве, Перми и другим городам России, странам ближнего
-          и дальнего зарубежья. Вы можете оформить заказ через сайт, написать на
-          электронную почту или позвонить по телефонам:
+          Мы работаем по всей Беларуси, странам ближнего и дальнего зарубежья.
+          Вы можете оформить заказ через сайт, написать на электронную почту или
+          позвонить по телефонам:
         </p>
         <ul class="contact-list">
           <li>
-            (495) 152-47-00 (Москва),
-            <a href="mailto:sales@metallist.org">sales@metallist.org</a>
-          </li>
-          <li>
-            (342) 214-09-26 (Пермь),
-            <a href="mailto:ipfaizulinperm@mail.ru">ipfaizulinperm@mail.ru</a>
-          </li>
-          <li>
-            (34271) 7-10-02 (Кунгур),
-            <a href="mailto:zmetallist@mail.ru">zmetallist@mail.ru</a>
+            <a href="tel:+375296129636">+375 (29) 612-96-36</a><br />
+            <a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a
+            ><br />
+            Каранкевич Сергей Иванович
           </li>
         </ul>
       </div>
@@ -653,9 +809,9 @@
           <div>
             <h4 class="footer-title">Компания</h4>
             <ul class="footer-nav">
-              <li><a href="#about">О компании</a></li>
+              <li><a href="src/pages/about.html">О компании</a></li>
               <li><a href="#catalog">Каталог</a></li>
-              <li><a href="public/pricelist.pdf">Документы</a></li>
+              <li><a href="src/pages/documents.html">Документы</a></li>
               <li><a href="#contacts">Контакты</a></li>
             </ul>
           </div>
@@ -663,9 +819,7 @@
           <div>
             <h4 class="footer-title">Помощь</h4>
             <ul class="footer-links">
-              <li><a href="#">Доставка и оплата</a></li>
-              <li><a href="#">Возврат</a></li>
-              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="src/pages/delivery.html">Доставка и оплата</a></li>
               <li>
                 <a href="src/pages/privacy.html">Политика конфиденциальности</a>
               </li>
@@ -674,10 +828,29 @@
 
           <div class="footer-contacts" id="contacts">
             <h4 class="footer-title">Контакты</h4>
-            <a class="contact-phone" href="tel:+70000000000"
-              >+7 (000) 000-00-00</a
+            <a class="contact-phone" href="tel:+375296129636"
+              >+375 (29) 612-96-36</a
             >
             <ul class="contact-list">
+              <li class="contact-list-item">
+                <svg
+                  class="contact-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <a href="mailto:skarankevich@yandex.by"
+                  >skarankevich@yandex.by</a
+                >
+              </li>
               <li class="contact-list-item">
                 <svg
                   class="contact-icon contact-icon-mt"
@@ -699,51 +872,12 @@
                     stroke-width="2"
                   ></path>
                 </svg>
-                <span>[[address]]</span>
-              </li>
-              <li class="contact-list-item">
-                <svg
-                  class="contact-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                </svg>
-                <a class="hover:underline" href="mailto:smeta@metallist.ru"
-                  >[[email@email.em]]</a
-                >
-              </li>
-              <li class="contact-list-item">
-                <svg
-                  class="contact-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                </svg>
-                <span>ПН. — ПТ. с 8:00 до 17:00</span>
+                <span>Шинная 13А, Бобруйск, Беларусь</span>
               </li>
             </ul>
           </div>
 
-          <div class="footer-copyright">
-            <p>© 2026 Завод «Металлист». Все права защищены.</p>
-            <p>© WSS «Fittings Factory»</p>
-          </div>
+          <div class="footer-copyright"><p>© WSS «Fittings Factory»</p></div>
         </div>
       </footer>
     </site-footer>

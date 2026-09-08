@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Доставка и оплата — [[COMPANY_NAME_PLACEHOLDER]]</title>
+    <meta
+      name="description"
+      content="Оплата и доставка продукции [[COMPANY_NAME_PLACEHOLDER]] по Беларуси. Порядок оформления заказа и способы оплаты."
+    />
+    <link rel="canonical" href="delivery.html" />
+    <meta property="og:title" content="Доставка и оплата — [[COMPANY_NAME_PLACEHOLDER]]" />
+    <meta property="og:description" content="Как оформить заказ, оплатить и получить доставку фурнитуры по Беларуси." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <link rel="stylesheet" href="../../src/styles.css" />
+    <script type="module" src="../../src/components/site-header.js"></script>
+    <script type="module" src="../../src/components/site-footer.js"></script>
+    <script type="module" src="../../src/components/contact-form.js"></script>
+  </head>
+  <body>
+    <!-- BEGIN: Header -->
+    <site-header>
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../../index.html" aria-label="[[COMPANY_NAME_PLACEHOLDER]] — на главную">
+            <img src="../../public/fittings_logo.svg" alt="[[COMPANY_NAME_PLACEHOLDER]]" height="40" width="40" />
+          </a>
+          <nav class="header-nav" aria-label="Основная навигация">
+            <a href="../../index.html#about">О компании</a>
+            <a href="../../index.html#catalog">Каталог</a>
+            <a href="documents.html">Документы</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <div class="header-actions">
+            <a class="header-icon-btn" href="tel:+375296129636" aria-label="Позвонить: +375 (29) 612-96-36">
+              <img src="../../public/icons/phone.svg" alt="" width="22" height="22" style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)" />
+            </a>
+            <a class="header-icon-btn" href="mailto:skarankevich@yandex.by" aria-label="Написать: skarankevich@yandex.by">
+              <img src="../../public/icons/mail.svg" alt="" width="22" height="22" style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)" />
+            </a>
+            <button aria-controls="site-header-drawer" aria-expanded="false" aria-label="Открыть меню" class="menu-btn" type="button">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="mobile-overlay" data-overlay></div>
+      <div aria-label="Меню" aria-modal="true" class="mobile-drawer" data-drawer id="site-header-drawer" role="dialog">
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-title">Меню</span>
+          <button aria-label="Закрыть меню" class="drawer-close-btn" data-close type="button">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </div>
+        <nav aria-label="Мобильная навигация" class="mobile-nav">
+          <a href="../../index.html#about">О компании <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="../../index.html#catalog">Каталог <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="documents.html">Документы <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="#contacts">Контакты <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+        </nav>
+        <div class="mobile-drawer-contacts">
+          <a class="contact-phone" href="tel:+375296129636">+375 (29) 612-96-36</a>
+          <p>ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a></p>
+        </div>
+      </div>
+    </site-header>
+    <!-- END: Header -->
+
+    <!-- BEGIN: Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol>
+        <li><a href="../../index.html">Главная</a></li>
+        <li aria-current="page">Доставка и оплата</li>
+      </ol>
+    </nav>
+    <!-- END: Breadcrumbs -->
+
+    <main>
+      <!-- BEGIN: Delivery Content -->
+      <section class="content-section">
+        <h1>Оплата и доставка</h1>
+
+        <h2>Порядок оформления заказа</h2>
+        <ol style="list-style: decimal; padding-left: 1.25rem; margin-bottom: 1rem;">
+          <li style="margin-bottom: 0.5rem; font-size: 0.875rem; line-height: 1.6;">
+            Клиент формирует заявку на сайте или отправляет по электронной почте
+            <a href="mailto:skarankevich@yandex.by" style="color: var(--brand-red); text-decoration: underline;">skarankevich@yandex.by</a>
+            ([[COMPANY_NAME_PLACEHOLDER]], Беларусь), указывая наименование товара, виды покрытия, количество и свои реквизиты (при
+            заказе в первый раз).
+          </li>
+          <li style="margin-bottom: 0.5rem; font-size: 0.875rem; line-height: 1.6;">Минимальный заказ - 1 коробка.</li>
+          <li style="margin-bottom: 0.5rem; font-size: 0.875rem; line-height: 1.6;">
+            На основании заявки мы формируем и отправляем клиенту счет на оплату по наличию товара на складе и проект
+            договора купли-продажи. При отсутствии заказываемого товара на складе, предлагается срок изготовления
+            данной продукции.
+          </li>
+          <li style="margin-bottom: 0.5rem; font-size: 0.875rem; line-height: 1.6;">
+            Производится согласование выставленного счета (подтверждение или корректировка), сроков и способов
+            доставки. Внесение предварительной оплаты клиентом.
+          </li>
+          <li style="margin-bottom: 0.5rem; font-size: 0.875rem; line-height: 1.6;">
+            По факту поступления денежных средств на расчетный счет поставщика производится выписка и оформление
+            товаросопроводительных документов. Производится отгрузка товара выбранным способом (через транспортные
+            компании, самовывозом, транспортом поставщика).
+          </li>
+        </ol>
+
+        <p style="margin: 1.5rem 0 0.5rem; font-size: 0.875rem; text-decoration: underline;">Отгрузка Транспортными компаниями:</p>
+
+        <p style="font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 600;">- из Беларусского филиала:</p>
+        <ul style="list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem;">
+          <li style="font-size: 0.875rem; line-height: 1.6;">по договоренности.</li>
+        </ul>
+
+        <p style="font-size: 0.875rem; color: var(--text-dark); margin-bottom: 2rem;">
+          [[COMPANY_NAME_PLACEHOLDER]] осуществляет бесплатную доставку до транспортной компании.
+        </p>
+
+        <h2>Способы оплаты</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 4px; padding: 1rem;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--brand-red); border-radius: 4px; color: #fff; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 1.1rem; height: 1.1rem;"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v2a2 2 0 002 2h10z"/><path d="M9 14a1 1 0 100 2 1 1 0 000-2z"/></svg>
+            </span>
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--gray-800);">Наличный расчёт</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 4px; padding: 1rem;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--brand-red); border-radius: 4px; color: #fff; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 1.1rem; height: 1.1rem;"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </span>
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--gray-800);">Безналичный расчёт</span>
+          </div>
+        </div>
+      </section>
+      <!-- END: Delivery Content -->
+    </main>
+
+    <!-- BEGIN: Contact Form -->
+    <contact-form>
+      <section class="contact-section">
+        <div class="contact-inner">
+          <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
+          <form novalidate>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-delivery-name">Имя</label>
+              <input class="form-input" id="cf-delivery-name" name="name" placeholder="Имя*" required type="text" autocomplete="name" />
+              <span class="form-error" data-error="name" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-delivery-email">E-mail</label>
+              <input class="form-input" id="cf-delivery-email" name="email" placeholder="E-mail*" required type="email" autocomplete="email" />
+              <span class="form-error" data-error="email" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-delivery-comment">Комментарий</label>
+              <textarea class="form-input" id="cf-delivery-comment" name="comment" placeholder="Ваш комментарий*" required rows="4"></textarea>
+              <span class="form-error" data-error="comment" aria-live="polite"></span>
+            </div>
+            <div class="form-checkbox-group">
+              <div class="checkbox-container">
+                <input class="form-checkbox" id="terms-delivery" name="consent" required type="checkbox" />
+              </div>
+              <label class="form-checkbox-label" for="terms-delivery">
+                Отправляя запрос, я принимаю условия
+                <a href="privacy.html">Пользовательского соглашения</a> и подтверждаю обязательное согласие с
+                <a href="privacy.html">Политикой конфиденциальности</a>.
+              </label>
+            </div>
+            <span class="form-error" data-error="consent" aria-live="polite" style="display: block; margin-bottom: 0.75rem; font-size: 0.75rem; color: var(--brand-red)"></span>
+            <button class="btn-primary" type="submit">Отправить</button>
+            <p data-status role="status" aria-live="polite" style="font-size: 0.875rem; margin-top: 0.75rem; min-height: 1.25rem"></p>
+          </form>
+        </div>
+      </section>
+    </contact-form>
+    <!-- END: Contact Form -->
+
+    <!-- BEGIN: Footer -->
+    <site-footer>
+      <footer class="footer">
+        <div class="container footer-main">
+          <div>
+            <h4 class="footer-title">Компания</h4>
+            <ul class="footer-nav">
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="../../index.html#catalog">Каталог</a></li>
+              <li><a href="documents.html">Документы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Помощь</h4>
+            <ul class="footer-links">
+              <li><a href="delivery.html" aria-current="page">Доставка и оплата</a></li>
+              <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer-contacts" id="contacts">
+            <h4 class="footer-title">Контакты</h4>
+            <a class="contact-phone" href="tel:+375296129636">+375 (29) 612-96-36</a>
+            <ul class="contact-list">
+              <li class="contact-list-item">
+                <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a>
+              </li>
+              <li class="contact-list-item">
+                <svg class="contact-icon contact-icon-mt" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <span>Шинная 13А, Бобруйск, Беларусь</span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copyright"><p>© WSS «Fittings Factory»</p></div>
+        </div>
+      </footer>
+    </site-footer>
+    <!-- END: Footer -->
+  </body>
+</html>

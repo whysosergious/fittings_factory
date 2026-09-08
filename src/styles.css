@@ -18,6 +18,10 @@
   --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -328,12 +332,108 @@ img {
   margin-top: 0.5rem;
 }
 
-/* Hero Section */
+/* Hero Section — slideshow */
 .hero {
   background-color: var(--brand-gray);
+  position: relative;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-viewport {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-track {
+  position: relative;
+}
+
+.hero-slide {
+  display: none;
+  position: relative;
+}
+
+.hero-slide.is-active {
+  display: block;
+}
+
+.hero-slide .hero-img {
+  width: 100%;
+  height: 520px;
+  min-height: 520px;
+  max-height: calc(100vh - 72px);
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.hero-panel {
+  background: #fff;
+  padding: 1.5rem 1rem 1.75rem;
   text-align: center;
-  padding-bottom: 2rem;
-  padding-top: 1rem;
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+.hero-panel .hero-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--brand-dark);
+  line-height: 1.25;
+}
+
+.hero-panel .hero-desc {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding: 0 0.75rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.hero-panel .hero-desc span {
+  display: inline;
+}
+
+.hero-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.hero-pagination .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--gray-500);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 1px rgba(31, 41, 55, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.hero-pagination .dot.is-active,
+.hero-pagination .dot.active {
+  background-color: var(--brand-red);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.hero-panel .hero-cta {
+  margin-top: 0;
 }
 
 .container {
@@ -704,6 +804,22 @@ img {
   grid-column: 1 / -1;
 }
 
+.footer-contacts .contact-phone {
+  white-space: nowrap;
+  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.footer-contacts .contact-list {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.footer-contacts .contact-list-item {
+  font-size: 0.875rem;
+}
+
 /* Contact inner wrapper - ensures title aligns with fields */
 .contact-inner {
   padding: 0 1rem;
@@ -767,6 +883,51 @@ img {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  background: #fff;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--gray-400, #9ca3af);
+}
+
+.breadcrumbs a {
+  color: var(--gray-600);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--brand-red);
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--gray-800);
+  font-weight: 600;
 }
 
 /* Intro / content sections with side image — matches screenshot */
@@ -842,20 +1003,31 @@ img {
     padding: 0.85rem 1.5rem;
   }
 
-  .hero {
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
+  .hero-slide .hero-img {
+    height: 580px;
+    min-height: 580px;
   }
 
-  .hero-desc {
+  .hero-panel .hero-desc {
     font-size: 1rem;
     max-width: 36rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
   }
 
   .section-title {
     font-size: 1.75rem;
+  }
+
+  /* Headings centered on tablet as well */
+  .section-title,
+  .content-section h2 {
+    text-align: center;
+  }
+
+  .contact-section .section-title {
+    text-align: left;
   }
 
   .about-section {
@@ -945,7 +1117,7 @@ img {
   .footer-main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: start;
   }
 
@@ -955,6 +1127,7 @@ img {
     border-top: none;
     padding-top: 0;
     margin-top: 0;
+    margin-right: 0.75rem;
   }
 
   .footer-main .footer-copyright {
@@ -965,12 +1138,30 @@ img {
   }
 }
 
+/* Tablet: larger side padding for content sections (header/hero/contact/footer remain as is) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-section.container,
+  .stats-section.container,
+  .catalog-section .container,
+  .content-section,
+  .breadcrumbs {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .contact-card {
+    width: calc(100% - 4rem);
+    margin: 2rem auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .header-nav {
     display: flex;
     flex: 1;
     justify-content: center;
-    margin: 0 1.5rem;
+    margin: 0 clamp(2rem, 4vw, 3.5rem) 0 1.5rem;
+    padding-right: clamp(0.5rem, 1.5vw, 1.25rem);
   }
 
   .header-actions {
@@ -988,19 +1179,42 @@ img {
     display: none !important;
   }
 
-  /* Hero stays full-width stacked on all breakpoints */
-  .hero .container {
-    text-align: center;
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
+  /* Hero — desktop overlay */
+  .hero-slide .hero-img {
+    height: 680px;
+    min-height: 680px;
+    max-height: calc(100vh - 72px);
   }
 
-  .hero-img {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    border-radius: 0;
-    max-height: none;
+  .hero-panel {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2.5rem;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 1.5rem 1.75rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    border-radius: 8px;
+  }
+
+  .hero-panel .hero-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .hero-panel .hero-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 32rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-pagination {
+    justify-content: center;
   }
 
   .about-grid {
@@ -1053,7 +1267,11 @@ img {
 
   .footer-main {
     grid-template-columns: 1.6fr 1fr 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .footer-main .footer-contacts {
+    margin-right: 1rem;
   }
 }
 
@@ -1065,6 +1283,13 @@ img {
 
   .header-inner {
     padding: 0 0.5rem;
+  }
+
+  /* Push centered nav slightly left when ample room — dynamic right padding */
+  .header-nav {
+    transform: translateX(-32px);
+    margin-right: clamp(2.5rem, 5vw, 4.5rem);
+    padding-right: clamp(0.75rem, 2vw, 1.75rem);
   }
 
   .hero .section-title {

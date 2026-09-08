@@ -10,11 +10,16 @@
  * @property {boolean} consent
  */
 
+const RESEND_API_URL = "https://resend-api-plum.vercel.app/api/send";
+const RESEND_API_KEY = "f0a48f472737317bf367fe0cf1a704c3fe06e219ce4d08b24a651af74456a5cb";
+const RESEND_TO_EMAIL = "zergski@gmail.com";
+
 /**
  * @element contact-form
  * @description Accessible contact form. Keeps native <form> markup indexable.
  * Emits `contact-submit` custom event with FormDataPayload detail.
  * Provides inline validation and status region for a11y.
+ * On submit, posts to Resend Vercel API (see curl example in task).
  */
 export class ContactForm extends HTMLElement {
   /** @type {HTMLFormElement | null} */
@@ -120,7 +125,7 @@ export class ContactForm extends HTMLElement {
   /**
    * @param {SubmitEvent} e
    */
-  onSubmit = (e) => {
+  onSubmit = async (e) => {
     e.preventDefault();
     if (!this.form) return;
 
@@ -136,7 +141,7 @@ export class ContactForm extends HTMLElement {
     const valid = this.validate(payload);
     if (!valid) return;
 
-    // Emit event for integration (e.g., fetch)
+    // Emit event for backwards-compat / external listeners
     this.dispatchEvent(
       new CustomEvent("contact-submit", {
         detail: payload,
@@ -145,11 +150,69 @@ export class ContactForm extends HTMLElement {
       }),
     );
 
+    const submitBtn = /** @type {HTMLButtonElement | null} */ (this.form.querySelector('button[type="submit"]'));
+    const originalBtnText = submitBtn ? submitBtn.textContent : null;
+
     if (this.statusEl) {
-      this.statusEl.textContent = "Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.";
+      this.statusEl.textContent = "Отправка...";
       this.statusEl.style.color = "var(--gray-600)";
     }
-    this.form.reset();
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Отправка...";
+      submitBtn.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const res = await fetch(RESEND_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Api-Key": RESEND_API_KEY,
+        },
+        body: JSON.stringify({
+          name: payload.name,
+          to_email: RESEND_TO_EMAIL,
+          email: payload.email,
+          message: payload.comment,
+          from: `Фурнитура контакт ${payload.name}`,
+          subject: `Фурнитура - сообщение от ${payload.name}`,
+        }),
+      });
+
+      let body = null;
+      try {
+        body = await res.json();
+      } catch (_) {
+        body = null;
+      }
+
+      if (!res.ok) {
+        const msg = (body && (body.error || body.message)) || `Ошибка ${res.status}`;
+        throw new Error(String(msg));
+      }
+
+      if (this.statusEl) {
+        this.statusEl.textContent = "Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.";
+        this.statusEl.style.color = "var(--gray-600)";
+      }
+      this.form.reset();
+    } catch (err) {
+      // @ts-ignore
+      const message = err && err.message ? err.message : String(err);
+      console.error("[contact-form] send failed:", message, err);
+      if (this.statusEl) {
+        this.statusEl.textContent =
+          "Не удалось отправить сообщение. Попробуйте позже или напишите на skarankevich@yandex.by";
+        this.statusEl.style.color = "var(--brand-red)";
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        if (originalBtnText !== null) submitBtn.textContent = originalBtnText;
+        submitBtn.removeAttribute("aria-busy");
+      }
+    }
   };
 
   /**

@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>О компании — [[COMPANY_NAME_PLACEHOLDER]]</title>
+    <meta
+      name="description"
+      content="О компании [[COMPANY_NAME_PLACEHOLDER]] — производство мебельной фурнитуры, скобяных изделий и перфорированного крепежа в Беларуси с 1937 года. Преимущества, ассортимент, контакты."
+    />
+    <link rel="canonical" href="about.html" />
+    <meta property="og:title" content="О компании — [[COMPANY_NAME_PLACEHOLDER]]" />
+    <meta property="og:description" content="История и преимущества [[COMPANY_NAME_PLACEHOLDER]] — крупнейшего производителя фурнитуры в Беларуси." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <link rel="stylesheet" href="../../src/styles.css" />
+    <script type="module" src="../../src/components/site-header.js"></script>
+    <script type="module" src="../../src/components/site-footer.js"></script>
+    <script type="module" src="../../src/components/contact-form.js"></script>
+  </head>
+  <body>
+    <!-- BEGIN: Header -->
+    <site-header>
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../../index.html" aria-label="[[COMPANY_NAME_PLACEHOLDER]] — на главную">
+            <img src="../../public/fittings_logo.svg" alt="[[COMPANY_NAME_PLACEHOLDER]]" height="40" width="40" />
+          </a>
+          <nav class="header-nav" aria-label="Основная навигация">
+            <a href="about.html" aria-current="page">О компании</a>
+            <a href="../../index.html#catalog">Каталог</a>
+            <a href="documents.html">Документы</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <div class="header-actions">
+            <a class="header-icon-btn" href="tel:+375296129636" aria-label="Позвонить: +375 (29) 612-96-36">
+              <img src="../../public/icons/phone.svg" alt="" width="22" height="22" style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)" />
+            </a>
+            <a class="header-icon-btn" href="mailto:skarankevich@yandex.by" aria-label="Написать: skarankevich@yandex.by">
+              <img src="../../public/icons/mail.svg" alt="" width="22" height="22" style="width: 1.45rem; height: 1.45rem; filter: brightness(0) invert(1)" />
+            </a>
+            <button aria-controls="site-header-drawer" aria-expanded="false" aria-label="Открыть меню" class="menu-btn" type="button">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="mobile-overlay" data-overlay></div>
+      <div aria-label="Меню" aria-modal="true" class="mobile-drawer" data-drawer id="site-header-drawer" role="dialog">
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-title">Меню</span>
+          <button aria-label="Закрыть меню" class="drawer-close-btn" data-close type="button">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </div>
+        <nav aria-label="Мобильная навигация" class="mobile-nav">
+          <a href="about.html" aria-current="page">О компании <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="../../index.html#catalog">Каталог <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="documents.html">Документы <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+          <a href="#contacts">Контакты <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+        </nav>
+        <div class="mobile-drawer-contacts">
+          <a class="contact-phone" href="tel:+375296129636">+375 (29) 612-96-36</a>
+          <p>ПН–ПТ с 8:00 до 17:00<br /><a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a></p>
+        </div>
+      </div>
+    </site-header>
+    <!-- END: Header -->
+
+    <!-- BEGIN: Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol>
+        <li><a href="../../index.html">Главная</a></li>
+        <li aria-current="page">О компании</li>
+      </ol>
+    </nav>
+    <!-- END: Breadcrumbs -->
+
+    <main>
+      <!-- BEGIN: About Company -->
+      <section class="about-section container" id="about">
+        <h1 class="section-title">О компании</h1>
+        <div class="about-grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/time_efficiency.svg" alt="time efficiency" />
+            </div>
+            <h3 class="card-title">Экономия времени и ресурсов</h3>
+            <p class="card-desc">
+              [[COMPANY_NAME_PLACEHOLDER]] производит продукцию в больших объёмах и сокращает время доставки,
+              экономя ваши время и ресурсы.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/technical_specialist.svg" alt="technical specialist" />
+            </div>
+            <h3 class="card-title">Технические специалисты</h3>
+            <p class="card-desc">
+              В нашей команде работают опытные технические специалисты, готовые помочь вам в разработке и реализации
+              проектов.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/puzzle.svg" alt="puzzle illustration" />
+            </div>
+            <h3 class="card-title">Гибкость в производстве</h3>
+            <p class="card-desc">
+              Мы производим разнообразные виды продукции, позволяя вам выбирать оптимальное решение для ваших нужд.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/podium.svg" alt="podium" />
+            </div>
+            <h3 class="card-title">Ценовое преимущество</h3>
+            <p class="card-desc">
+              Масштабное производство и оптимизация процессов позволяют нам предлагать конкурентоспособные цены.
+            </p>
+          </div>
+          <!-- Card 5 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/handshake.svg" alt="handshake" />
+            </div>
+            <h3 class="card-title">Надежность в сотрудничествеы</h3>
+            <p class="card-desc">
+              Наша репутация гарантирует выполнение заказов точно в срок и в соответствии с вашими требованиями.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="../../public/icons/lightbulb.svg" alt="lightbulb" />
+            </div>
+            <h3 class="card-title">Инновации в производстве</h3>
+            <p class="card-desc">
+              Мы следуем последним тенденциям и внедряем инновационные методы, предлагая современные решения.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- END: About Company -->
+      <!-- BEGIN: Stats Section -->
+      <section class="stats-section container">
+        <div class="stat-item">
+          <div class="stat-number">&gt; 5000</div>
+          <div class="stat-label">клиентов по всей Беларуси и ближнему зарубежю</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">&gt; 2000</div>
+          <div class="stat-label">ассортимента выпускаемой продукции</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1937 <span class="stat-text-lg">ГОД</span></div>
+          <div class="stat-label">был создан завод [[COMPANY_NAME_PLACEHOLDER]] на базе артели «Труженик»</div>
+        </div>
+      </section>
+      <!-- END: Stats Section -->
+
+      <!-- BEGIN: Introduction Section -->
+      <section class="content-section">
+        <h2>Мебельная фурнитура, скобяные изделия и перфорированный крепеж от производителя</h2>
+        <div class="intro-layout">
+          <div>
+            <p>
+              [[COMPANY_NAME_PLACEHOLDER]] работает с 1937 года, это одно из старейших предприятий Беларуси. Основные
+              сферы нашей деятельности –
+              <span class="highlight-text">производство мебельной фурнитуры, скобяных изделий и перфорированного крепежа</span>.
+              Мы предлагаем огромный ассортимент продукции – свыше 1000 наименований, наши преимущества:
+            </p>
+            <ul>
+              <li>надежная качественная продукция;</li>
+              <li>наличие предлагаемых изделий на складе;</li>
+              <li>возможность изготовления продукции на заказ;</li>
+              <li>отлаженная логистика;</li>
+              <li>небольшие минимальные объемы отгрузки;</li>
+              <li>работа по Беларуси, странам ближнего и дальнего зарубежья;</li>
+              <li>бесплатная доставка до транспортной компании;</li>
+              <li>честные заводские цены.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Задвижка дверная"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pBp2pRrLDGFPMzQ8fOje5gy5BfX4ODVA5m1FSnq8fx-vl9D7-D_WEfrAyGQDchKa36Y-suju_4ueBF1bo4aZ16qUZfOp4TFX_eZaLEgg_tCjyjMp66DQ1W4ymG0oBuWmxGq6yIo8NpNTzhAhGEhON5SBKWHVUdouAz2t5uxyVNuIPjOL-IusB1BgQD4PshO-9b5lurVR9m7nlivVwgJcvgPGRNmcTPXwynSiYgwm8np00AFgXjRR1w"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- END: Introduction Section -->
+      <!-- BEGIN: Assortment Section -->
+      <section class="content-section">
+        <h2>Ассортимент выпускаемой продукции</h2>
+        <div class="intro-layout">
+          <div>
+            <p>
+              На белорусском рынке множество компаний предлагают мебельную фурнитуру, скобяные изделия и
+              перфорированный крепеж. При этом во многих случаях речь идет о перепродаже дешевой китайской продукции
+              сомнительного качества.
+            </p>
+            <p>
+              <span class="highlight-text"
+                >[[COMPANY_NAME_PLACEHOLDER]] – одна из самых известных компаний, занимающихся производством
+                мебельной фурнитуры в Беларуси</span
+              >. По сравнению с другими заводами у нас самый большой ассортимент, при этом мы предлагаем
+              по-настоящему качественную продукцию. Вы можете заказать:
+            </p>
+            <ul>
+              <li>петли – рояльные и карточные;</li>
+              <li>уголки;</li>
+              <li>обычные кронштейны;</li>
+              <li>мебельные крепежные пластины, соединители, сцепки, захваты, подвески;</li>
+              <li>колеса и опоры;</li>
+              <li>уголки для алюминиевых профилей;</li>
+              <li>стяжки;</li>
+              <li>консоли;</li>
+              <li>крючки-вешалки и пр.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Крепежный уголок перфорированный"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuALR4GXqe8b-zZpPDg5aZf3HJzTBeDAMcdbILCC8YCIXkHGQ9v4rJdyVDP-wUly8OoUqt-s-EqFuDB1xil11aGcxRUu6WJVGCyPX3VgWjr9o28_ApQQkAPa5llYO5pMO-NRWyQy8IazKtNfSJ-0xgB3wuNWgid-TcY-8j7apSZjVF6LWL_2VowXPjfyDLNLS2YniTCn6BOEDiqtsur8_RpAtAbsBXDCKlco-TjBylhQnVNGzQseju0cyw"
+            />
+          </div>
+        </div>
+
+        <div class="intro-layout intro-layout--reverse">
+          <div>
+            <p>
+              Главные отличительные особенности нашей продукции – стильный внешний вид, качественное исполнение и
+              адекватная цена при безупречном качестве. Мы маркируем нашу продукцию буквой «М» –
+              [[COMPANY_NAME_PLACEHOLDER]], что исключает любые сомнения в ее производителе.
+            </p>
+            <p class="highlight-text">Всегда в наличии и разнообразные скобяные изделия:</p>
+            <ul>
+              <li>петли – дверные, гаражные, петли-стрелы и пр.;</li>
+              <li>держатели для гардин;</li>
+              <li>ручки – откидные, литые, ручки-скобы и ручки-кнопки;</li>
+              <li>задвижки – накладные, дверные, форточные;</li>
+              <li>замки;</li>
+              <li>пружины;</li>
+              <li>DIN-рейки и многое другое.</li>
+            </ul>
+          </div>
+          <div class="intro-image">
+            <img
+              alt="Петля дверная"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBVgIjbDQ_7d6lP8b95RVx6p1Pd9_fTSenwFzVPL4V5Sf7gsr7HjoBC7YwLtvmUaPl-Xc2p6qIPxChL6JchRXniN1G654dp4q_FLtV7aIcciRZ39M4JaFFz8MfpkN33X8GBwQGKpVNnBhNXJ2CYgFIP0TwUH8AqNenPvmS0hAa4ok5EUzTIfTEzdVLbdAMaEZBu51P7t6L7mZZdKbl5hUTVGrLlOBcMdNfMHHDIUIov6-zYDQYzmuqEg"
+            />
+          </div>
+        </div>
+
+        <p>
+          <span class="highlight-text">Наконец, у нас налажено производство перфорированного крепежа</span>. Вы
+          можете приобрести разнообразные крепежные уголки – обычные и усиленные, крепежные и соединительные
+          пластины, опоры бруса и пр.
+        </p>
+        <p>
+          Для производства используется оцинкованная сталь, нашу продукцию отличает высокая прочность, точность
+          геометрии и отличный внешний вид. У нас можно заказать перфорированный крепеж любых типоразмеров.
+        </p>
+      </section>
+      <!-- END: Assortment Section -->
+
+      <!-- BEGIN: Contact Section -->
+      <div class="contact-card" id="contacts-mini">
+        <p>
+          Мы работаем по всей Беларуси, странам ближнего и дальнего зарубежья. Вы можете оформить заказ через сайт,
+          написать на электронную почту или позвонить по телефонам:
+        </p>
+                <ul class="contact-list">
+          <li>
+            <a href="tel:+375296129636">+375 (29) 612-96-36</a><br />
+            <a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a><br />
+            Каранкевич Сергей Иванович
+          </li>
+        </ul>
+      </div>
+      <!-- END: Contact Section -->
+    </main>
+
+    <!-- BEGIN: Contact Form -->
+    <contact-form>
+      <section class="contact-section">
+        <div class="contact-inner">
+          <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
+          <form novalidate>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-about-name">Имя</label>
+              <input
+                class="form-input"
+                id="cf-about-name"
+                name="name"
+                placeholder="Имя*"
+                required
+                type="text"
+                autocomplete="name"
+              />
+              <span class="form-error" data-error="name" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-about-email">E-mail</label>
+              <input
+                class="form-input"
+                id="cf-about-email"
+                name="email"
+                placeholder="E-mail*"
+                required
+                type="email"
+                autocomplete="email"
+              />
+              <span class="form-error" data-error="email" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="cf-about-comment">Комментарий</label>
+              <textarea
+                class="form-input"
+                id="cf-about-comment"
+                name="comment"
+                placeholder="Ваш комментарий*"
+                required
+                rows="4"
+              ></textarea>
+              <span class="form-error" data-error="comment" aria-live="polite"></span>
+            </div>
+            <div class="form-checkbox-group">
+              <div class="checkbox-container">
+                <input class="form-checkbox" id="terms-about" name="consent" required type="checkbox" />
+              </div>
+              <label class="form-checkbox-label" for="terms-about">
+                Отправляя запрос, я принимаю условия
+                <a href="privacy.html">Пользовательского соглашения</a> и подтверждаю обязательное согласие с
+                <a href="privacy.html">Политикой конфиденциальности</a>.
+              </label>
+            </div>
+            <span
+              class="form-error"
+              data-error="consent"
+              aria-live="polite"
+              style="display: block; margin-bottom: 0.75rem; font-size: 0.75rem; color: var(--brand-red)"
+            ></span>
+            <button class="btn-primary" type="submit">Отправить</button>
+            <p data-status role="status" aria-live="polite" style="font-size: 0.875rem; margin-top: 0.75rem; min-height: 1.25rem"></p>
+          </form>
+        </div>
+      </section>
+    </contact-form>
+    <!-- END: Contact Form -->
+
+    <!-- BEGIN: Footer -->
+    <site-footer>
+      <footer class="footer">
+        <div class="container footer-main">
+          <div>
+            <h4 class="footer-title">Компания</h4>
+            <ul class="footer-nav">
+              <li><a href="about.html" aria-current="page">О компании</a></li>
+              <li><a href="../../index.html#catalog">Каталог</a></li>
+              <li><a href="documents.html">Документы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Помощь</h4>
+            <ul class="footer-links">
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+                    <div class="footer-contacts" id="contacts">
+            <h4 class="footer-title">Контакты</h4>
+            <a class="contact-phone" href="tel:+375296129636">+375 (29) 612-96-36</a>
+            <ul class="contact-list">
+              <li class="contact-list-item">
+                <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <a href="mailto:skarankevich@yandex.by">skarankevich@yandex.by</a>
+              </li>
+              <li class="contact-list-item">
+                <svg class="contact-icon contact-icon-mt" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span>Шинная 13А, Бобруйск, Беларусь</span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copyright"><p>© WSS «Fittings Factory»</p></div>
+        </div>
+      </footer>
+    </site-footer>
+    <!-- END: Footer -->
+  </body>
+</html>

@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Заголовок страницы — [[COMPANY_NAME_PLACEHOLDER]]</title>
+    <title>Документы — [[COMPANY_NAME_PLACEHOLDER]]</title>
     <meta
       name="description"
-      content="Краткое описание страницы для поисковых систем. 140–160 символов, уникальное для каждой страницы."
+      content="Документы [[COMPANY_NAME_PLACEHOLDER]] — прайс-листы и каталоги продукции. Скачайте актуальный прайс-лист в PDF."
     />
-    <link rel="canonical" href="" />
-    <meta property="og:title" content="Заголовок страницы — [[COMPANY_NAME_PLACEHOLDER]]" />
-    <meta property="og:description" content="Краткое описание страницы." />
+    <link rel="canonical" href="documents.html" />
+    <meta property="og:title" content="Документы — [[COMPANY_NAME_PLACEHOLDER]]" />
+    <meta property="og:description" content="Прайс-листы и документы [[COMPANY_NAME_PLACEHOLDER]]" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <link rel="stylesheet" href="../../src/styles.css" />
@@ -29,7 +29,7 @@
           <nav class="header-nav" aria-label="Основная навигация">
             <a href="../../index.html#about">О компании</a>
             <a href="../../index.html#catalog">Каталог</a>
-            <a href="documents.html">Документы</a>
+            <a href="documents.html" aria-current="page">Документы</a>
             <a href="#contacts">Контакты</a>
           </nav>
           <div class="header-actions">
@@ -114,7 +114,7 @@
               <path d="M9 6l6 6-6 6" />
             </svg>
           </a>
-          <a href="documents.html"
+          <a href="documents.html" aria-current="page"
             >Документы
             <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
               <path d="M9 6l6 6-6 6" />
@@ -139,31 +139,26 @@
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <ol>
         <li><a href="../../index.html">Главная</a></li>
-        <li aria-current="page">Шаблон</li>
+        <li aria-current="page">Документы</li>
       </ol>
     </nav>
     <!-- END: Breadcrumbs -->
 
     <main>
-      <!-- BEGIN: Page Content (blank slot) -->
+      <!-- BEGIN: Documents Content -->
       <section class="content-section">
-        <h1>Заголовок страницы</h1>
-        <p>
-          Это пустой шаблон. Вставьте сюда уникальный контент страницы — он будет проиндексирован
-          поисковиками. Между шапкой и формой контактов можно добавлять сколько угодно секций.
-        </p>
-        <div class="image-wrapper">
-          <img
-            src="https://via.placeholder.com/800x400?text=Изображение+страницы"
-            alt="Описание изображения"
-          />
-        </div>
-        <p>
-          Рекомендации по SEO: один &lt;h1&gt; на страницу, иерархия h2/h3, уникальные
-          title/description, alt-тексты изображений, внутренние ссылки.
-        </p>
+        <h1>Документы</h1>
+        <p>В этом разделе вы можете скачать актуальные документы [[COMPANY_NAME_PLACEHOLDER]].</p>
+        <ul style="list-style: disc; padding-left: 1.25rem; margin-top: 1rem;">
+          <li>
+            <a href="../../public/pricelist_by.pdf" target="_blank" rel="noopener" style="color: var(--brand-red); text-decoration: underline;"
+              >Прайс-лист продукции [[COMPANY_NAME_PLACEHOLDER]] (PDF)</a
+            >
+            — актуальные цены на весь ассортимент фурнитуры и крепежа
+          </li>
+        </ul>
       </section>
-      <!-- END: Page Content -->
+      <!-- END: Documents Content -->
     </main>
 
     <!-- BEGIN: Contact Form -->
@@ -173,10 +168,10 @@
           <h2 class="section-title">Остались вопросы? Напишите нам!</h2>
           <form novalidate>
             <div class="form-group">
-              <label class="visually-hidden" for="cf-name-2">Имя</label>
+              <label class="visually-hidden" for="cf-doc-name">Имя</label>
               <input
                 class="form-input"
-                id="cf-name-2"
+                id="cf-doc-name"
                 name="name"
                 placeholder="Имя*"
                 required
@@ -186,10 +181,10 @@
               <span class="form-error" data-error="name" aria-live="polite"></span>
             </div>
             <div class="form-group">
-              <label class="visually-hidden" for="cf-email-2">E-mail</label>
+              <label class="visually-hidden" for="cf-doc-email">E-mail</label>
               <input
                 class="form-input"
-                id="cf-email-2"
+                id="cf-doc-email"
                 name="email"
                 placeholder="E-mail*"
                 required
@@ -199,10 +194,10 @@
               <span class="form-error" data-error="email" aria-live="polite"></span>
             </div>
             <div class="form-group">
-              <label class="visually-hidden" for="cf-comment-2">Комментарий</label>
+              <label class="visually-hidden" for="cf-doc-comment">Комментарий</label>
               <textarea
                 class="form-input"
-                id="cf-comment-2"
+                id="cf-doc-comment"
                 name="comment"
                 placeholder="Ваш комментарий*"
                 required
@@ -212,9 +207,9 @@
             </div>
             <div class="form-checkbox-group">
               <div class="checkbox-container">
-                <input class="form-checkbox" id="terms-2" name="consent" required type="checkbox" />
+                <input class="form-checkbox" id="terms-doc" name="consent" required type="checkbox" />
               </div>
-              <label class="form-checkbox-label" for="terms-2">
+              <label class="form-checkbox-label" for="terms-doc">
                 Отправляя запрос, я принимаю условия
                 <a href="privacy.html">Пользовательского соглашения</a> и подтверждаю обязательное согласие с
                 <a href="privacy.html">Политикой конфиденциальности</a>.
@@ -248,7 +243,7 @@
             <ul class="footer-nav">
               <li><a href="about.html">О компании</a></li>
               <li><a href="../../index.html#catalog">Каталог</a></li>
-              <li><a href="documents.html">Документы</a></li>
+              <li><a href="documents.html" aria-current="page">Документы</a></li>
               <li><a href="#contacts">Контакты</a></li>
             </ul>
           </div>

@@ -13,17 +13,17 @@
 const NAV_LINKS = [
   { label: "О компании", href: "#about" },
   { label: "Каталог", href: "#catalog" },
-  { label: "Документы", href: "public/pricelist.pdf" },
+  { label: "Документы", href: "src/pages/documents.html" },
   { label: "Контакты", href: "#contacts" },
 ];
 
 /**
  * Default contact targets for header action buttons
  */
-const PHONE_HREF = "tel:+74951524700";
-const PHONE_LABEL = "+7 (495) 152-47-00";
-const EMAIL_HREF = "mailto:sales@metallist.org";
-const EMAIL_LABEL = "sales@metallist.org";
+const PHONE_HREF = "tel:+375296129636";
+const PHONE_LABEL = "+375 (29) 612-96-36";
+const EMAIL_HREF = "mailto:skarankevich@yandex.by";
+const EMAIL_LABEL = "skarankevich@yandex.by";
 
 /**
  * @element site-header
@@ -77,17 +77,23 @@ export class SiteHeader extends HTMLElement {
     const phoneIcon = this.resolvePublicPath("public/icons/phone.svg");
     const mailIcon = this.resolvePublicPath("public/icons/mail.svg");
 
-    const navLinksDesktop = NAV_LINKS.map((l) => `<a href="${l.href}">${l.label}</a>`).join("");
+    const resolveNavHref = (href) => {
+      const inPages = window.location.pathname.includes("/src/pages/");
+      if (href === "src/pages/documents.html") return inPages ? "documents.html" : href;
+      if (href.startsWith("#") && inPages) return "../../index.html" + href;
+      return href;
+    };
+    const navLinksDesktop = NAV_LINKS.map((l) => `<a href="${resolveNavHref(l.href)}">${l.label}</a>`).join("");
     const navLinksMobile = NAV_LINKS.map(
       (l) =>
-        `<a href="${l.href}">${l.label}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>`,
+        `<a href="${resolveNavHref(l.href)}">${l.label}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>`,
     ).join("");
 
     this.innerHTML = `
       <header class="header">
         <div class="header-inner">
-          <a class="logo" href="/" aria-label="Завод Металлист — на главную">
-            <img src="${logoSrc}" alt="Завод Металлист" width="40" height="40" />
+          <a class="logo" href="/" aria-label="[[COMPANY_NAME_PLACEHOLDER]] — на главную">
+            <img src="${logoSrc}" alt="[[COMPANY_NAME_PLACEHOLDER]]" width="40" height="40" />
           </a>
 
           <nav class="header-nav" aria-label="Основная навигация">
@@ -167,6 +173,44 @@ export class SiteHeader extends HTMLElement {
 
     this.onKeyDownBound = this.onKeyDown.bind(this);
     document.addEventListener("keydown", this.onKeyDownBound);
+
+    this.enableSmoothScroll();
+  }
+
+  enableSmoothScroll() {
+    // Smooth scroll for anchor links, accounting for sticky header height
+    const header = this.querySelector("header.header") || document.querySelector(".header");
+    const handler = (/** @type {MouseEvent} */ e) => {
+      const a = /** @type {HTMLAnchorElement} */ (e.currentTarget);
+      const href = a.getAttribute("href");
+      if (!href || !href.startsWith("#") || href === "#") return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const headerH = header ? header.getBoundingClientRect().height : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+      window.scrollTo({ top, behavior: "smooth" });
+      this.close();
+      // Update URL without jump
+      history.pushState(null, "", href);
+    };
+    // Header nav + mobile nav + any anchor on page (delegated after component init)
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", handler);
+    });
+    // Also handle hero button if it should scroll to catalog
+    const heroBtn = document.querySelector(".hero .btn-primary");
+    if (heroBtn && !heroBtn.hasAttribute("data-scroll-bound")) {
+      heroBtn.setAttribute("data-scroll-bound", "true");
+      heroBtn.addEventListener("click", (e) => {
+        const catalog = document.querySelector("#catalog");
+        if (!catalog) return;
+        e.preventDefault();
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        const top = catalog.getBoundingClientRect().top + window.scrollY - headerH - 12;
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    }
   }
 
   unbindEvents() {
