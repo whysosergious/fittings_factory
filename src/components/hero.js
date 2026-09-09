@@ -141,16 +141,20 @@ export class HeroSlideshow {
     };
     window.addEventListener("resize", onResize);
     window.addEventListener("orientationchange", onResize);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", onResize);
-    }
+    // Intentionally NOT listening to visualViewport.resize:
+    // visualViewport.height tracks the dynamic viewport (dvh) which changes
+    // when the mobile browser address bar shows/hides on scroll. Recalculating
+    // hero height on every such change causes visible layout shift. Keeping
+    // the listener to window resize only gives stable svh-like behavior.
   }
 
   getViewportHeight() {
-    // Use visualViewport for mobile browsers with dynamic toolbars
-    if (window.visualViewport && typeof window.visualViewport.height === "number") {
-      return window.visualViewport.height;
-    }
+    // Use layout viewport (window.innerHeight) for stable hero height.
+    // Previously this preferred visualViewport.height (dynamic dvh) which
+    // caused layout shift on scroll when the browser chrome collapsed.
+    // window.innerHeight maps to the layout viewport / small viewport (svh)
+    // when interactive-widget=resizes-visual (default), so it stays stable
+    // while the address bar hides/shows and only changes on real resize.
     return window.innerHeight;
   }
 
