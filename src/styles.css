@@ -346,6 +346,18 @@ img {
   max-width: 1280px;
   margin: 0 auto;
   background-color: var(--brand-gray);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.hero-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.hero-viewport.is-dragging .hero-img {
+  pointer-events: none;
 }
 
 .hero-track {
@@ -365,11 +377,14 @@ img {
   width: 100%;
   height: 520px;
   min-height: 520px;
+  max-height: calc(100dvh - 72px);
   max-height: calc(100vh - 72px);
   object-fit: cover;
   display: block;
   margin-bottom: 0;
   border-radius: 0;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .hero-panel {
@@ -1020,6 +1035,7 @@ img {
   .hero-slide .hero-img {
     height: 580px;
     min-height: 580px;
+    max-height: calc(100dvh - 72px);
   }
 
   .hero-panel .hero-desc {
@@ -1198,6 +1214,7 @@ img {
   .hero-slide .hero-img {
     height: 680px;
     min-height: 680px;
+    max-height: calc(100dvh - 72px);
     max-height: calc(100vh - 72px);
   }
 
