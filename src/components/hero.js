@@ -229,6 +229,7 @@ export class HeroSlideshow {
     let startY = 0;
     let startTime = 0;
     let isPointerDown = false;
+    let suppressClickUntil = 0;
     const SWIPE_THRESHOLD = 40; // px
     const RESTRAINT = 90; // max vertical drift to still count as swipe
     const ALLOWED_TIME = 700; // ms
@@ -265,8 +266,16 @@ export class HeroSlideshow {
       const dy = y - startY;
       const elapsed = Date.now() - startTime;
 
+      const isSwipe =
+        elapsed <= ALLOWED_TIME && Math.abs(dx) >= SWIPE_THRESHOLD && Math.abs(dy) <= RESTRAINT;
+
+      // If we dragged or swiped, suppress the click that will fire after pointerup
+      if (wasDragging || isSwipe) {
+        suppressClickUntil = Date.now() + 600;
+      }
+
       // Only trigger swipe if horizontal swipe with enough distance and limited vertical
-      if (elapsed <= ALLOWED_TIME && Math.abs(dx) >= SWIPE_THRESHOLD && Math.abs(dy) <= RESTRAINT) {
+      if (isSwipe) {
         if (dx < 0) this.next();
         else this.prev();
       } else if (wasDragging) {
@@ -280,12 +289,28 @@ export class HeroSlideshow {
       img.addEventListener("dragstart", (e) => e.preventDefault());
     });
 
+    // If a drag just ended, suppress the synthetic click that follows
+    vp.addEventListener(
+      "click",
+      (e) => {
+        if (Date.now() < suppressClickUntil) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      },
+      true
+    );
+
     if (window.PointerEvent) {
       vp.addEventListener(
         "pointerdown",
         (e) => {
           // Only left button / touch / pen
           if (e.pointerType === "mouse" && e.button !== 0) return;
+          // Don't start swipe when the interaction starts on an interactive element
+          // (CTA link, pagination dots, etc.) — let the native click proceed.
+          const t = e.target;
+          if (t instanceof Element && t.closest("a, button")) return;
           // Capture pointer for consistent up/move
           try {
             vp.setPointerCapture(e.pointerId);
@@ -321,6 +346,8 @@ export class HeroSlideshow {
         "touchstart",
         (e) => {
           if (e.touches.length !== 1) return;
+          const et = e.target;
+          if (et instanceof Element && et.closest("a, button")) return;
           const t = e.touches[0];
           onStart(t.clientX, t.clientY);
         },

@@ -198,19 +198,6 @@ export class SiteHeader extends HTMLElement {
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener("click", handler);
     });
-    // Also handle hero button if it should scroll to catalog
-    const heroBtn = document.querySelector(".hero .btn-primary");
-    if (heroBtn && !heroBtn.hasAttribute("data-scroll-bound")) {
-      heroBtn.setAttribute("data-scroll-bound", "true");
-      heroBtn.addEventListener("click", (e) => {
-        const catalog = document.querySelector("#catalog");
-        if (!catalog) return;
-        e.preventDefault();
-        const headerH = header ? header.getBoundingClientRect().height : 0;
-        const top = catalog.getBoundingClientRect().top + window.scrollY - headerH - 12;
-        window.scrollTo({ top, behavior: "smooth" });
-      });
-    }
   }
 
   unbindEvents() {
